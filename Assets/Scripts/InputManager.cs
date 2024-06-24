@@ -38,11 +38,11 @@ public class InputManager : MonoBehaviour
             #region CheckIsInteractable
             if (hit2D.collider == null) //Etkileþimsiz obje ise çalýþýr.
             {
-                Debug.Log("Interact: Collidersýz Ýtem Ýþlem Gerçekleþtirilemiyor");
+                //Debug.Log("Interact: Collidersýz Ýtem Ýþlem Gerçekleþtirilemiyor");
             }
             else //Etkileþimli obje ise çalýþýr.
             {
-                Debug.Log("Interact: " + hit2D.collider.gameObject.name);
+                //Debug.Log("Interact: " + hit2D.collider.gameObject.name);
 
                 if (hit2D.collider.gameObject.TryGetComponent<IInteractable>(out IInteractable interatableObject) && canPlayerSelectDoor)
                 {

@@ -17,6 +17,11 @@ public class GameManager : MonoBehaviour
         #endregion
     }
 
+    private void Start()
+    {
+        StateManager.Instance.ChangeCurrentState(GameStates.MainMenu);
+    }
+
 
 
 }

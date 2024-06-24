@@ -28,6 +28,14 @@ public class LanguageManager : MonoBehaviour
 
     [Header("All Texts")]
     [SerializeField] public TMP_Text ingameHeaderText;
+    [Space]
+    [SerializeField] public TMP_Text mainMenuStartText;
+    [SerializeField] public TMP_Text mainMenuHelpText;
+    [SerializeField] public TMP_Text mainMenuExitText;
+    [Space]
+    [SerializeField] public TMP_Text yesText;
+    [SerializeField] public TMP_Text noText;
+
 
 
     [ContextMenu("Change Language")]
@@ -50,6 +58,16 @@ public class LanguageManager : MonoBehaviour
 
         #region SetCurrentLanguageSo
         currentLanguageSo = allLanguagesSoList[currentLanguageIndex];
+        #endregion
+
+
+        #region SetTexts
+        mainMenuStartText.text = currentLanguageSo.startButton;
+        mainMenuHelpText.text = currentLanguageSo.helpButton;
+        mainMenuExitText.text = currentLanguageSo.exitButton;
+
+        yesText.text = currentLanguageSo.yesButton;
+        noText.text = currentLanguageSo.noButton;
         #endregion
     }
 }

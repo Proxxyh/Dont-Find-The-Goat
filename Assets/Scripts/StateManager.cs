@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
+using static UnityEditor.Progress;
 
 public class StateManager : MonoBehaviour
 {
@@ -9,10 +11,13 @@ public class StateManager : MonoBehaviour
     [Header("Main")]
     [SerializeField] public GameStates currentState;
     [SerializeField] public bool isCurrentStateUsingUpdate;
+    [SerializeField] public bool isPlayerChangeTheDoor;
+    [SerializeField] public bool isPlayerAnswerTheQuestion;
 
     [Header("References")]
+    [SerializeField] private GameObject yesOrNoBubble;
     [SerializeField] private GameObject goatObj;
-    [SerializeField] private List<GameObject> allDoors;
+    [SerializeField] public List<GameObject> allDoors;
     [SerializeField] private List<Transform> threeDoorPositions;
     [SerializeField] private List<Transform> twoDoorPositions;
 
@@ -20,7 +25,7 @@ public class StateManager : MonoBehaviour
 
     [Header("Gameobject Lists For Activate")]
     [SerializeField] private List<GameObject> mainMenuObjects;
-    [SerializeField] private List<GameObject> threeDoorPickOneObjects;
+    [SerializeField] private List<GameObject> inGameObjects;
 
 
 
@@ -37,7 +42,7 @@ public class StateManager : MonoBehaviour
 
     private void Start()
     {
-        ChangeCurrentState(GameStates.ThreeDoorPickOne);
+
     }
 
     private void Update()
@@ -47,7 +52,7 @@ public class StateManager : MonoBehaviour
 
     //=========================================================================
 
-    void ChangeCurrentState(GameStates gameState)
+    public void ChangeCurrentState(GameStates gameState)
     {
         isCurrentStateUsingUpdate = false;  //Bir sonraki state'e geçmeden önce updatei kapatýr.
 
@@ -65,12 +70,22 @@ public class StateManager : MonoBehaviour
                 {
                     mainMenuObjects[i].SetActive(true);
                 }   //Main menü objelerini aktif et
+                for (int i = 0; i < inGameObjects.Count; i++)
+                {
+                    inGameObjects[i].SetActive(false);
+                }   //threeDoorPickOne objelerini kapat
+                
 
                 isCurrentStateUsingUpdate = false;  //En son çalýþacak
                 break;
 
 
             case GameStates.ThreeDoorPickOne:
+                for (int i = 0;i < inGameObjects.Count; i++)
+                {
+                    inGameObjects[i].SetActive(true);
+                }
+                yesOrNoBubble.SetActive(false);
                 ChooseWhichDoorHaveGoat();
 
                 LanguageManager.Instance.ingameHeaderText.text = LanguageManager.Instance.currentLanguageSo.ingameHeaderTextThreeDoorPickOne;
@@ -82,7 +97,12 @@ public class StateManager : MonoBehaviour
 
 
             case GameStates.AskForTheChange:
-                isCurrentStateUsingUpdate = false;  //En son çalýþacak
+                yesOrNoBubble.SetActive(true);
+                LanguageManager.Instance.ingameHeaderText.text = LanguageManager.Instance.currentLanguageSo.ingameHeaderTextAskForTheChange;
+                RemoveDoor();
+
+
+                isCurrentStateUsingUpdate = true;  //En son çalýþacak
                 break;
 
 
@@ -119,7 +139,19 @@ public class StateManager : MonoBehaviour
 
 
                 case GameStates.AskForTheChange:
-                    Debug.Log("Updateim Yok");
+                    if (isPlayerAnswerTheQuestion)
+                    {
+                        if(isPlayerChangeTheDoor == false)
+                        {
+                            //Oyuncuya sonucu göster
+                            print("Oyuncu kapýyý deðiþtirmedi");
+                        }
+                        else if(isPlayerChangeTheDoor == true)
+                        {
+                            //Oyuncuya iki kapýdan birini seçtir
+                            print("Oyuncu kapýyý deðiþtirdi");
+                        }
+                    }
                     break;
 
 
@@ -152,6 +184,7 @@ public class StateManager : MonoBehaviour
 
 
             case GameStates.AskForTheChange:
+                yesOrNoBubble.SetActive(false);
                 break;
 
 
@@ -173,5 +206,55 @@ public class StateManager : MonoBehaviour
 
         goatObj.transform.position = allDoors[choosenDoorIndex].transform.position;
         goatObj.transform.parent = allDoors[choosenDoorIndex].transform;
+        goatObj.transform.localPosition = Vector3.zero;
+    }
+
+    void RemoveDoor()
+    {
+        List<GameObject> allDoorObjForThisFunc = new List<GameObject>();
+        for (int i = 0; i < 3; i++)
+        {
+            allDoorObjForThisFunc.Add(allDoors[i]);
+        }
+        
+        allDoorObjForThisFunc.Remove(InputManager.Instance.currentChosenDoor);
+
+        GameObject thisDoorGonnaBeRemove = new GameObject();
+        foreach (GameObject item in allDoorObjForThisFunc)
+        {
+            if (item.GetComponent<Door>().isGoatHere == false)
+            {
+                thisDoorGonnaBeRemove = item;
+            }   
+        }
+        thisDoorGonnaBeRemove.SetActive(false);
+
+
+        List<GameObject> lastTwoDoors = new List<GameObject>();
+        foreach (GameObject item in allDoors)
+        {
+            if (item.activeSelf)
+            {
+                lastTwoDoors.Add(item);
+                print(item.name);
+            }
+        }
+
+        for (int i = 0; i < twoDoorPositions.Count; i++)
+        {
+            lastTwoDoors[i].transform.position = twoDoorPositions[i].transform.position;
+        }
+
+
+
+        //Ýki kapýnýn pozisyonunu ayarla
+    }
+    public void ChangeIsPlayerAnswerTheQuestion(bool isPlayerAnswerTheQuestionn)
+    {
+        isPlayerAnswerTheQuestion = isPlayerAnswerTheQuestionn;
+    }
+    public void ChangeIsPlayerChangeTheDoor(bool isPlayerChangeTheDoorr)
+    {
+        isPlayerChangeTheDoor = isPlayerChangeTheDoorr;
     }
 }
