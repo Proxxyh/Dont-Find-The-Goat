@@ -28,11 +28,12 @@ public class InputManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && canPlayerSelectDoor)
         {
+
             #region GetMousePosition&SendRay
             mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            hit2D = Physics2D.Raycast(mousePosition, Vector2.zero, Mathf.Infinity,interactableLayers);
+            hit2D = Physics2D.Raycast(mousePosition, Vector2.zero, Mathf.Infinity, interactableLayers);
             #endregion
 
             #region CheckIsInteractable
@@ -44,12 +45,19 @@ public class InputManager : MonoBehaviour
             {
                 //Debug.Log("Interact: " + hit2D.collider.gameObject.name);
 
-                if (hit2D.collider.gameObject.TryGetComponent<IInteractable>(out IInteractable interatableObject) && canPlayerSelectDoor)
+                if (hit2D.collider.gameObject.tag == "DoorClosed" /*TryGetComponent<IInteractable>(out IInteractable interatableObject)*/ && canPlayerSelectDoor)
                 {
-                    interatableObject.Interact();
+                    hit2D.collider.gameObject.transform.parent.GetComponent<Door>().Interact();
                 }
             }
             #endregion
         }
+
+        #region SendRayToScreenEveryFrame
+        //Vector2 mousePositionTwo = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        
+        //Physics2D.Raycast(mousePositionTwo, Vector2.zero);
+        //Debug.DrawRay(mousePositionTwo, Camera.main.transform.forward * 10, Color.red, 0.5f);
+        #endregion
     }
 }

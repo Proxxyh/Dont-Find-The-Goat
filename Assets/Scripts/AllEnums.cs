@@ -6,7 +6,7 @@ public enum GameStates
     MainMenu,
     ThreeDoorPickOne,
     AskForTheChange,
-    TwoDoorPickOne,
+    PlayerChangedDoor,
     SeeResult,
 }
 

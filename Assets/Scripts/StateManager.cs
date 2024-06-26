@@ -13,10 +13,12 @@ public class StateManager : MonoBehaviour
     [SerializeField] public bool isCurrentStateUsingUpdate;
     [SerializeField] public bool isPlayerChangeTheDoor;
     [SerializeField] public bool isPlayerAnswerTheQuestion;
+    [SerializeField] public bool isPlayerWon;
 
     [Header("References")]
     [SerializeField] private GameObject yesOrNoBubble;
     [SerializeField] private GameObject goatObj;
+    [SerializeField] private GameObject reStartButton;
     [SerializeField] public List<GameObject> allDoors;
     [SerializeField] private List<Transform> threeDoorPositions;
     [SerializeField] private List<Transform> twoDoorPositions;
@@ -87,6 +89,10 @@ public class StateManager : MonoBehaviour
                 }
                 yesOrNoBubble.SetActive(false);
                 ChooseWhichDoorHaveGoat();
+                SetDoorsPosition();
+                SetDoorClosed();
+                SetDoorSetActive();
+
 
                 LanguageManager.Instance.ingameHeaderText.text = LanguageManager.Instance.currentLanguageSo.ingameHeaderTextThreeDoorPickOne;
                 InputManager.Instance.currentChosenDoor = null;
@@ -97,21 +103,85 @@ public class StateManager : MonoBehaviour
 
 
             case GameStates.AskForTheChange:
-                yesOrNoBubble.SetActive(true);
+                
                 LanguageManager.Instance.ingameHeaderText.text = LanguageManager.Instance.currentLanguageSo.ingameHeaderTextAskForTheChange;
                 RemoveDoor();
+                yesOrNoBubble.SetActive(true);
 
 
                 isCurrentStateUsingUpdate = true;  //En son çalýþacak
                 break;
 
 
-            case GameStates.TwoDoorPickOne:
+            case GameStates.PlayerChangedDoor:
+                ChangePlayerDoorWhenLastTwoDoorRemairing();
+
+                ChangeCurrentState(GameStates.SeeResult);
                 isCurrentStateUsingUpdate = false;  //En son çalýþacak
                 break;
 
 
             case GameStates.SeeResult:
+                #region TumKapilariAc
+                foreach (GameObject item in allDoors)
+                {
+                    item.GetComponent<Door>().doorClosed.SetActive(false);
+                    item.GetComponent<Door>().doorOpened.SetActive(true);
+                }
+                #endregion
+
+                if(InputManager.Instance.currentChosenDoor.GetComponent<Door>().isGoatHere == true)
+                {
+                    //Oyuncunun seçtiði kapýda keçi varsa
+                    LanguageManager.Instance.ingameHeaderText.text = LanguageManager.Instance.currentLanguageSo.ingameHeaderTextWinText;
+                    print("Kazandý");
+                    isPlayerWon = true;
+                }
+                else
+                {
+                    //Oyuncu yanlýþ tercih yaptýysa
+                    LanguageManager.Instance.ingameHeaderText.text = LanguageManager.Instance.currentLanguageSo.ingameHeaderTextLoseText;
+                    print("Kaybetti");
+                    isPlayerWon = false;
+                }
+
+                if (isPlayerChangeTheDoor)
+                {
+                    //Oyuncu seçimini deðiþtirdiyse çalýþ
+                    print("Deðiþti");
+                    if (isPlayerWon)
+                    {
+                        ResultManager.Instance.playerChangeDoorAllTotal++;
+                        ResultManager.Instance.playerChangeDoorWinTotal++;
+                        ResultManager.Instance.CalculateAllPercent();
+                    }
+                    else
+                    {
+                        ResultManager.Instance.playerChangeDoorAllTotal++;
+                        ResultManager.Instance.CalculateAllPercent();
+                    }
+
+                }
+                else if (!isPlayerChangeTheDoor)
+                {
+                    //Oyuncu seçimini deðiþtirmediyse çalýþ
+                    print("Deðiþmedi");
+                    if (isPlayerWon)
+                    {
+                        ResultManager.Instance.playerNotChangeDoorAllTotal++;
+                        ResultManager.Instance.playerNotChangeDoorWinTotal++;
+                        ResultManager.Instance.CalculateAllPercent();
+                    }
+                    else
+                    {
+                        ResultManager.Instance.playerNotChangeDoorAllTotal++;
+                        ResultManager.Instance.CalculateAllPercent();
+                    }
+                }
+
+                reStartButton.SetActive(true);
+
+
                 isCurrentStateUsingUpdate = false;  //En son çalýþacak
                 break;
         }
@@ -141,21 +211,20 @@ public class StateManager : MonoBehaviour
                 case GameStates.AskForTheChange:
                     if (isPlayerAnswerTheQuestion)
                     {
-                        if(isPlayerChangeTheDoor == false)
+                        yesOrNoBubble.SetActive(false);
+                        if (isPlayerChangeTheDoor == false)
                         {
-                            //Oyuncuya sonucu göster
-                            print("Oyuncu kapýyý deðiþtirmedi");
+                            ChangeCurrentState(GameStates.SeeResult);
                         }
                         else if(isPlayerChangeTheDoor == true)
                         {
-                            //Oyuncuya iki kapýdan birini seçtir
-                            print("Oyuncu kapýyý deðiþtirdi");
+                            ChangeCurrentState(GameStates.PlayerChangedDoor);
                         }
                     }
                     break;
 
 
-                case GameStates.TwoDoorPickOne:
+                case GameStates.PlayerChangedDoor:
                     Debug.Log("Updateim Yok");
                     break;
 
@@ -188,16 +257,19 @@ public class StateManager : MonoBehaviour
                 break;
 
 
-            case GameStates.TwoDoorPickOne:
+            case GameStates.PlayerChangedDoor:
                 break;
 
 
             case GameStates.SeeResult:
+                reStartButton.SetActive(false);
+                ResetAllForStartGameAgain();
                 break;
         }
     }
 
     //=========================================================================
+
 
     void ChooseWhichDoorHaveGoat()
     {
@@ -205,49 +277,67 @@ public class StateManager : MonoBehaviour
         allDoors[choosenDoorIndex].GetComponent<Door>().isGoatHere = true;
 
         goatObj.transform.position = allDoors[choosenDoorIndex].transform.position;
-        goatObj.transform.parent = allDoors[choosenDoorIndex].transform;
+        goatObj.transform.parent = allDoors[choosenDoorIndex].transform.GetChild(0).transform;
         goatObj.transform.localPosition = Vector3.zero;
+        goatObj.transform.parent = allDoors[choosenDoorIndex].transform;
     }
+    void SetDoorsPosition()
+    {
+        for (int i = 0; i < allDoors.Count; i++)
+        {
+            allDoors[i].transform.position = threeDoorPositions[i].position;
+        }
+    }
+    void SetDoorClosed()
+    {
+        foreach (GameObject item in allDoors)
+        {
+            item.GetComponent<Door>().doorClosed.SetActive(true);
+            item.GetComponent<Door>().doorOpened.SetActive(false);
+        }
+    }
+    void SetDoorSetActive()
+    {
+        for (int i = 0; i < allDoors.Count; i++)
+        {
+            allDoors[i].SetActive(true);
+        }
+    }
+
 
     void RemoveDoor()
     {
-        List<GameObject> allDoorObjForThisFunc = new List<GameObject>();
-        for (int i = 0; i < 3; i++)
-        {
-            allDoorObjForThisFunc.Add(allDoors[i]);
-        }
-        
-        allDoorObjForThisFunc.Remove(InputManager.Instance.currentChosenDoor);
+        //Tüm kapýlarý bir listeye ekle
+        //mevcut kapýyý listeden çýkar
+        //Geriye kalan iki kapýdan keçi olmayan bir kapýyý çýkar
+        //En son kalan seçilen kapý ve diðer kapýyý uygun konumlara sýrala
 
-        GameObject thisDoorGonnaBeRemove = new GameObject();
-        foreach (GameObject item in allDoorObjForThisFunc)
+        List<GameObject> allDoorCopy = new List<GameObject>();
+        allDoors.ForEach(item => { allDoorCopy.Add(item);}) ;
+        allDoorCopy.Remove(InputManager.Instance.currentChosenDoor);
+        foreach (GameObject item in allDoorCopy)
         {
             if (item.GetComponent<Door>().isGoatHere == false)
             {
-                thisDoorGonnaBeRemove = item;
-            }   
-        }
-        thisDoorGonnaBeRemove.SetActive(false);
-
-
-        List<GameObject> lastTwoDoors = new List<GameObject>();
-        foreach (GameObject item in allDoors)
-        {
-            if (item.activeSelf)
-            {
-                lastTwoDoors.Add(item);
-                print(item.name);
+                item.SetActive(false);
+                break;
             }
         }
 
-        for (int i = 0; i < twoDoorPositions.Count; i++)
+        allDoorCopy.Clear();
+        foreach (var item in allDoors)
         {
-            lastTwoDoors[i].transform.position = twoDoorPositions[i].transform.position;
+            if (item.activeSelf)
+            {
+                allDoorCopy.Add(item);
+            }
         }
 
+        for (int i = 0; i < allDoorCopy.Count; i++)
+        {
+            allDoorCopy[i].transform.position = twoDoorPositions[i].position;
+        }
 
-
-        //Ýki kapýnýn pozisyonunu ayarla
     }
     public void ChangeIsPlayerAnswerTheQuestion(bool isPlayerAnswerTheQuestionn)
     {
@@ -256,5 +346,39 @@ public class StateManager : MonoBehaviour
     public void ChangeIsPlayerChangeTheDoor(bool isPlayerChangeTheDoorr)
     {
         isPlayerChangeTheDoor = isPlayerChangeTheDoorr;
+    }
+
+
+    void ChangePlayerDoorWhenLastTwoDoorRemairing()
+    {
+        List<GameObject> lastDoor = new List<GameObject>();
+        foreach (GameObject item in allDoors)
+        {
+            if (item.activeSelf)
+            {
+                lastDoor.Add(item);
+            }     
+        }
+        lastDoor.Remove(InputManager.Instance.currentChosenDoor);
+        InputManager.Instance.currentChosenDoor = lastDoor[0];
+    }
+
+    void ResetAllForStartGameAgain()
+    {
+        isPlayerChangeTheDoor = false;
+        isPlayerWon = false;
+        isPlayerAnswerTheQuestion = false;
+
+        InputManager.Instance.currentChosenDoor = null;
+        InputManager.Instance.canPlayerSelectDoor = false;
+
+        foreach (GameObject item in allDoors)
+        {
+            item.GetComponent<Door>().isGoatHere = false;
+        }
+    }
+    public void ReStartButton()
+    {
+        ChangeCurrentState(GameStates.ThreeDoorPickOne);
     }
 }

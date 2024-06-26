@@ -20,3 +20,7 @@ MonoBehaviour:
   ingameHeaderTextThreeDoorPickOne: Which door has the goat behind it?
   ingameHeaderTextAskForTheChange: I have eliminated a door without a goat behind
     it for you. Would you like to change the door you originally chose now?
+  ingameHeaderTextTwoDoorPickOne: 'And here is the result:'
+  ingameHeaderTextWinText: Congratulations, you found the goat. Shall we try again?
+  ingameHeaderTextLoseText: Unfortunately, it's the wrong door. Would you like to
+    try again?

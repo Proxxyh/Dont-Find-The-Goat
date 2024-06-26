@@ -14,4 +14,7 @@ public class LanguagesSo : ScriptableObject
     [Space]
     public string ingameHeaderTextThreeDoorPickOne;
     public string ingameHeaderTextAskForTheChange;
+    public string ingameHeaderTextTwoDoorPickOne;
+    public string ingameHeaderTextWinText;
+    public string ingameHeaderTextLoseText;
 }

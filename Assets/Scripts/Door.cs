@@ -11,9 +11,10 @@ public class Door : MonoBehaviour, IInteractable
     [SerializeField] public bool isGoatHere;
     [SerializeField] public bool isPlayersDoor;
 
-    [Header("Sprites")]
-    [SerializeField] private Sprite doorClosed;
-    [SerializeField] private Sprite doorOpened;
+    [Header("References")]
+    [SerializeField] public GameObject doorClosed;
+    [SerializeField] public GameObject doorOpened;
+
 
     public void Interact()
     {

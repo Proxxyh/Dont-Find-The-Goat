@@ -22,3 +22,7 @@ MonoBehaviour:
   ingameHeaderTextAskForTheChange: "Geriye kalan kap\u0131lardan arkas\u0131nda ke\xE7i
     olmayan bir kap\u0131y\u0131 senin i\xE7in \xE7\u0131kard\u0131m. \u015Eimdi
     se\xE7ti\u011Fin kap\u0131y\u0131 de\u011Fi\u015Ftirmek ister misin?"
+  ingameHeaderTextTwoDoorPickOne: "Ve i\u015Fte sonu\xE7:"
+  ingameHeaderTextWinText: "Tebrikler ke\xE7iyi buldun. Bir daha deneyelim mi?"
+  ingameHeaderTextLoseText: "Malesef yanl\u0131\u015F kap\u0131. Tekrar denemek ister
+    misin?"
