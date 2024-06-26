@@ -16,6 +16,6 @@ public class MainMenuPanel : MonoBehaviour
 
     public void ExitButton()
     {
-
+        Application.Quit();
     }
 }
