@@ -17,8 +17,9 @@ public class StateManager : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private GameObject yesOrNoBubble;
-    [SerializeField] private GameObject goatObj;
+    [SerializeField] private GameObject carObj;
     [SerializeField] private GameObject reStartButton;
+    [SerializeField] public List<GameObject> goatObjects;
     [SerializeField] public List<GameObject> allDoors;
     [SerializeField] private List<Transform> threeDoorPositions;
     [SerializeField] private List<Transform> twoDoorPositions;
@@ -88,7 +89,7 @@ public class StateManager : MonoBehaviour
                     inGameObjects[i].SetActive(true);
                 }
                 yesOrNoBubble.SetActive(false);
-                ChooseWhichDoorHaveGoat();
+                ChooseWhichDoorHaveCar();
                 SetDoorsPosition();
                 SetDoorClosed();
                 SetDoorSetActive();
@@ -130,7 +131,7 @@ public class StateManager : MonoBehaviour
                 }
                 #endregion
 
-                if(InputManager.Instance.currentChosenDoor.GetComponent<Door>().isGoatHere == true)
+                if(InputManager.Instance.currentChosenDoor.GetComponent<Door>().isCarHere == true)
                 {
                     //Oyuncunun seçtiði kapýda keçi varsa
                     LanguageManager.Instance.ingameHeaderText.text = LanguageManager.Instance.currentLanguageSo.ingameHeaderTextWinText;
@@ -271,15 +272,31 @@ public class StateManager : MonoBehaviour
     //=========================================================================
 
 
-    void ChooseWhichDoorHaveGoat()
+    void ChooseWhichDoorHaveCar()
     {
         int choosenDoorIndex = Random.Range(0, 3);
-        allDoors[choosenDoorIndex].GetComponent<Door>().isGoatHere = true;
+        allDoors[choosenDoorIndex].GetComponent<Door>().isCarHere = true;
 
-        goatObj.transform.position = allDoors[choosenDoorIndex].transform.position;
-        goatObj.transform.parent = allDoors[choosenDoorIndex].transform.GetChild(0).transform;
-        goatObj.transform.localPosition = Vector3.zero;
-        goatObj.transform.parent = allDoors[choosenDoorIndex].transform;
+        carObj.transform.position = allDoors[choosenDoorIndex].transform.position;
+        carObj.transform.parent = allDoors[choosenDoorIndex].transform.GetChild(0).transform;
+        carObj.transform.localPosition = Vector3.zero;
+        carObj.transform.parent = allDoors[choosenDoorIndex].transform;
+
+
+        List<GameObject> lastTwoDoor = new List<GameObject>();
+        for (int i = 0; i < allDoors.Count; i++)
+        {
+            lastTwoDoor.Add(allDoors[i]);
+        }
+        lastTwoDoor.Remove(allDoors[choosenDoorIndex]);
+
+        for (int i = 0; i < goatObjects.Count; i++)
+        {
+            goatObjects[i].transform.position = lastTwoDoor[i].transform.position;
+            goatObjects[i].transform.parent = lastTwoDoor[i].transform.GetChild(0).transform;
+            goatObjects[i].transform.localPosition = Vector3.zero;
+            goatObjects[i].transform.parent = lastTwoDoor[i].transform;
+        }
     }
     void SetDoorsPosition()
     {
@@ -317,7 +334,7 @@ public class StateManager : MonoBehaviour
         allDoorCopy.Remove(InputManager.Instance.currentChosenDoor);
         foreach (GameObject item in allDoorCopy)
         {
-            if (item.GetComponent<Door>().isGoatHere == false)
+            if (item.GetComponent<Door>().isCarHere == false)
             {
                 item.SetActive(false);
                 break;
@@ -374,7 +391,7 @@ public class StateManager : MonoBehaviour
 
         foreach (GameObject item in allDoors)
         {
-            item.GetComponent<Door>().isGoatHere = false;
+            item.GetComponent<Door>().isCarHere = false;
         }
     }
     public void ReStartButton()

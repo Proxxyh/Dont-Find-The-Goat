@@ -8,7 +8,7 @@ public class Door : MonoBehaviour, IInteractable
     [Header("Door Settings")]
     [SerializeField] public int doorIndex;
     [SerializeField] public bool isOpen;
-    [SerializeField] public bool isGoatHere;
+    [SerializeField] public bool isCarHere;
     [SerializeField] public bool isPlayersDoor;
 
     [Header("References")]
