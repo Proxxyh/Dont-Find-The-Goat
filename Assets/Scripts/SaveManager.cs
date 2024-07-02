@@ -6,6 +6,8 @@ using UnityEngine;
 public class SaveManager : MonoBehaviour
 {
     public static SaveManager Instance;
+
+
     private void Awake()
     {
         #region InstanceCheck
@@ -24,7 +26,6 @@ public class SaveManager : MonoBehaviour
     {
         SaveGame();
     }
-
 
     public void SaveGame()
     {

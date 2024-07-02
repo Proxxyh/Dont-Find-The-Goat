@@ -18,6 +18,8 @@ public class Door : MonoBehaviour, IInteractable
     [Header("Sprites")]
     [SerializeField] public Sprite doorClosedNormal;
     [SerializeField] public Sprite doorClosedSelected;
+    [SerializeField] public Sprite doorOpenedNormal;
+    [SerializeField] public Sprite doorOpenedSelected;
 
 
     public void Interact()
@@ -29,8 +31,10 @@ public class Door : MonoBehaviour, IInteractable
         {
             StateManager.Instance.allDoors[i].GetComponent<Door>().isPlayersDoor = false;
             StateManager.Instance.allDoors[i].transform.Find("Door").transform.gameObject.GetComponent<SpriteRenderer>().sprite = doorClosedNormal;
+            StateManager.Instance.allDoors[i].transform.Find("DoorOpened").transform.gameObject.GetComponent<SpriteRenderer>().sprite = doorOpenedNormal;
         }
         this.isPlayersDoor = true;
         this.gameObject.transform.Find("Door").transform.gameObject.GetComponent<SpriteRenderer>().sprite = doorClosedSelected;
+        
     }
 }

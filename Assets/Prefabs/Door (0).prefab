@@ -81,6 +81,8 @@ MonoBehaviour:
   doorOpened: {fileID: 8173875190806437892}
   doorClosedNormal: {fileID: 21300000, guid: 4efbe9afc411a1d41af2423aecc2b7c5, type: 3}
   doorClosedSelected: {fileID: 21300000, guid: 3f42652a16532d544abfab247081fb50, type: 3}
+  doorOpenedNormal: {fileID: 21300000, guid: d3ffc5071a9db0b4b95849c30f0206d1, type: 3}
+  doorOpenedSelected: {fileID: 21300000, guid: fd0904ef4c49def4788eba23cd4bf7d0, type: 3}
 --- !u!1 &4965410493556809991
 GameObject:
   m_ObjectHideFlags: 0

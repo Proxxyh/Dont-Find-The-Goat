@@ -14,6 +14,8 @@ public class MainMenuPanel : MonoBehaviour
         transform.Find("HelpSection").gameObject.SetActive(true);
 
         transform.Find("MainButtons").gameObject.SetActive(false);
+        transform.Find("DeveloperTextGameObject").gameObject.SetActive(false);
+        transform.Find("PixelArtistTextGameObject").gameObject.SetActive(false);
     }
 
     public void ExitButton()
@@ -30,6 +32,8 @@ public class MainMenuPanel : MonoBehaviour
         StateManager.Instance.ChangeCurrentState(GameStates.MainMenu);
         transform.Find("MainButtons").gameObject.SetActive(true);
         transform.Find("HelpSection").gameObject.SetActive(false);
+        transform.Find("DeveloperTextGameObject").gameObject.SetActive(true);
+        transform.Find("PixelArtistTextGameObject").gameObject.SetActive(true);
 
     }
 }

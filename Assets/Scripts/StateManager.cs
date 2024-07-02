@@ -88,6 +88,7 @@ public class StateManager : MonoBehaviour
                 {
                     inGameObjects[i].SetActive(true);
                 }
+                reStartButton.SetActive(false);
                 yesOrNoBubble.SetActive(false);
                 ChooseWhichDoorHaveCar();
                 SetDoorsPosition();
@@ -135,21 +136,21 @@ public class StateManager : MonoBehaviour
                 {
                     //Oyuncunun seçtiði kapýda keçi varsa
                     LanguageManager.Instance.ingameHeaderText.text = LanguageManager.Instance.currentLanguageSo.ingameHeaderTextWinText;
-                    print("Kazandý");
+                    //print("Kazandý");
                     isPlayerWon = true;
                 }
                 else
                 {
                     //Oyuncu yanlýþ tercih yaptýysa
                     LanguageManager.Instance.ingameHeaderText.text = LanguageManager.Instance.currentLanguageSo.ingameHeaderTextLoseText;
-                    print("Kaybetti");
+                    //print("Kaybetti");
                     isPlayerWon = false;
                 }
 
                 if (isPlayerChangeTheDoor)
                 {
                     //Oyuncu seçimini deðiþtirdiyse çalýþ
-                    print("Deðiþti");
+                    //print("Deðiþti");
                     if (isPlayerWon)
                     {
                         ResultManager.Instance.playerChangeDoorAllTotal++;
@@ -166,7 +167,7 @@ public class StateManager : MonoBehaviour
                 else if (!isPlayerChangeTheDoor)
                 {
                     //Oyuncu seçimini deðiþtirmediyse çalýþ
-                    print("Deðiþmedi");
+                    //print("Deðiþmedi");
                     if (isPlayerWon)
                     {
                         ResultManager.Instance.playerNotChangeDoorAllTotal++;
@@ -215,6 +216,7 @@ public class StateManager : MonoBehaviour
                         yesOrNoBubble.SetActive(false);
                         if (isPlayerChangeTheDoor == false)
                         {
+                            InputManager.Instance.currentChosenDoor.transform.Find("DoorOpened").GetComponent<SpriteRenderer>().sprite = InputManager.Instance.currentChosenDoor.GetComponent<Door>().doorOpenedSelected;
                             ChangeCurrentState(GameStates.SeeResult);
                         }
                         else if(isPlayerChangeTheDoor == true)
@@ -378,6 +380,7 @@ public class StateManager : MonoBehaviour
         }
         lastDoor.Remove(InputManager.Instance.currentChosenDoor);
         InputManager.Instance.currentChosenDoor = lastDoor[0];
+        lastDoor[0].transform.Find("DoorOpened").GetComponent<SpriteRenderer>().sprite = lastDoor[0].GetComponent<Door>().doorOpenedSelected;
     }
 
     public void ResetAllForStartGameAgain()
@@ -393,6 +396,7 @@ public class StateManager : MonoBehaviour
         {
             item.GetComponent<Door>().isCarHere = false;
             item.transform.Find("Door").transform.gameObject.GetComponent<SpriteRenderer>().sprite = item.GetComponent<Door>().doorClosedNormal;
+            item.transform.Find("DoorOpened").transform.gameObject.GetComponent<SpriteRenderer>().sprite = item.GetComponent<Door>().doorOpenedNormal;
         }
 
     }
