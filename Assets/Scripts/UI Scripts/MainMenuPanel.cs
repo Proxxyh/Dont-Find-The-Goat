@@ -11,11 +11,25 @@ public class MainMenuPanel : MonoBehaviour
 
     public void HelpButton()
     {
+        transform.Find("HelpSection").gameObject.SetActive(true);
 
+        transform.Find("MainButtons").gameObject.SetActive(false);
     }
 
     public void ExitButton()
     {
         Application.Quit();
+    }
+
+
+    public void HomeButton()
+    {
+        StateManager.Instance.ResetAllForStartGameAgain();
+        StateManager.Instance.reStartButton.SetActive(false);
+        StateManager.Instance.ChangeCurrentState(GameStates.None);
+        StateManager.Instance.ChangeCurrentState(GameStates.MainMenu);
+        transform.Find("MainButtons").gameObject.SetActive(true);
+        transform.Find("HelpSection").gameObject.SetActive(false);
+
     }
 }

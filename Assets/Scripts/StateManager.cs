@@ -18,7 +18,7 @@ public class StateManager : MonoBehaviour
     [Header("References")]
     [SerializeField] private GameObject yesOrNoBubble;
     [SerializeField] private GameObject carObj;
-    [SerializeField] private GameObject reStartButton;
+    [SerializeField] public GameObject reStartButton;
     [SerializeField] public List<GameObject> goatObjects;
     [SerializeField] public List<GameObject> allDoors;
     [SerializeField] private List<Transform> threeDoorPositions;
@@ -380,7 +380,7 @@ public class StateManager : MonoBehaviour
         InputManager.Instance.currentChosenDoor = lastDoor[0];
     }
 
-    void ResetAllForStartGameAgain()
+    public void ResetAllForStartGameAgain()
     {
         isPlayerChangeTheDoor = false;
         isPlayerWon = false;
@@ -392,10 +392,16 @@ public class StateManager : MonoBehaviour
         foreach (GameObject item in allDoors)
         {
             item.GetComponent<Door>().isCarHere = false;
+            item.transform.Find("Door").transform.gameObject.GetComponent<SpriteRenderer>().sprite = item.GetComponent<Door>().doorClosedNormal;
         }
+
     }
     public void ReStartButton()
     {
         ChangeCurrentState(GameStates.ThreeDoorPickOne);
     }
+
+
+
+
 }

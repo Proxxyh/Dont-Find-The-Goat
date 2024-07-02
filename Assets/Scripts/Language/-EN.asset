@@ -24,3 +24,23 @@ MonoBehaviour:
   ingameHeaderTextWinText: Congratulations, you found the car. Shall we try again?
   ingameHeaderTextLoseText: Unfortunately, it's the wrong door. Would you like to
     try again?
+  helpWhatIsItHeader: What is it?
+  helpWhatIsItText: This game was created to test the practical accuracy of the Monty
+    Hall Problem.
+  helpMontyHallProblemHeader: What is the Monty Hall Problem?
+  helpMontyHallProblemText: 'The Monty Hall problem is a probability puzzle based
+    on the American TV game show Let''s Make a Deal, named after the show''s host,
+    Monty Hall.
+
+    
+
+    In the game, there are three doors: behind one is a
+    car, and behind the other two are goats. You initially choose door number 1.
+    The host then opens one of the other doors to reveal a goat and shows it to you.
+    He then asks: ''Would you like to switch to door number 2?'' So, is it advantageous
+    to change your choice in this situation?
+
+    
+
+    Here, we will find the
+    answer to this question in our game.'

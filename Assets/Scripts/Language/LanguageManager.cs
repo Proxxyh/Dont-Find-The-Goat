@@ -35,6 +35,11 @@ public class LanguageManager : MonoBehaviour
     [Space]
     [SerializeField] public TMP_Text yesText;
     [SerializeField] public TMP_Text noText;
+    [Space]
+    [SerializeField] public TMP_Text whatIsItHeaderText;
+    [SerializeField] public TMP_Text whatIsItDescriptionText;
+    [SerializeField] public TMP_Text montyHallProblemText;
+    [SerializeField] public TMP_Text montyHallProblemDescriptionText;
 
 
 
@@ -68,6 +73,11 @@ public class LanguageManager : MonoBehaviour
 
         yesText.text = currentLanguageSo.yesButton;
         noText.text = currentLanguageSo.noButton;
+
+        whatIsItHeaderText.text = currentLanguageSo.helpWhatIsItHeader;
+        whatIsItDescriptionText.text = currentLanguageSo.helpWhatIsItText;
+        montyHallProblemText.text = currentLanguageSo.helpMontyHallProblemHeader;
+        montyHallProblemDescriptionText.text = currentLanguageSo.helpMontyHallProblemText;
         #endregion
     }
 }

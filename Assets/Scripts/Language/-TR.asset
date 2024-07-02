@@ -26,3 +26,16 @@ MonoBehaviour:
   ingameHeaderTextWinText: "Tebrikler arabay\u0131 buldun. Bir daha deneyelim mi?"
   ingameHeaderTextLoseText: "Malesef yanl\u0131\u015F kap\u0131. Tekrar denemek ister
     misin?"
+  helpWhatIsItHeader: Nedir?
+  helpWhatIsItText: "Bu oyun \"Monty Hall Problemi\" nin pratikte ne kadar do\u011Fru
+    oldu\u011Funu test etmek amac\u0131yla yap\u0131lm\u0131\u015Ft\u0131r."
+  helpMontyHallProblemHeader: Monty Hall Problemi Nedir?
+  helpMontyHallProblemText: "Monty Hall problemi, Amerikan TV yar\u0131\u015Fma program\u0131
+    Let's Make a Deal'a dayanan bir olas\u0131l\u0131k bulmacas\u0131d\u0131r. Problem
+    ad\u0131n\u0131, yar\u0131\u015Fman\u0131n sunucusu Monty Hall'dan al\u0131r.\n\nBir
+    yar\u0131\u015Fma program\u0131nda \xFC\xE7 kap\u0131 var: birinde araba, di\u011Fer
+    ikisinde ke\xE7i var. \u0130lk olarak 1. kap\u0131y\u0131 se\xE7iyorsunuz. Sunucu
+    arkas\u0131nda ke\xE7i olan bir kap\u0131y\u0131 a\xE7\u0131yor ve arkas\u0131nda
+    ke\xE7i oldu\u011Funu size g\xF6steriyor. Sonra size soruyor: \"2. kap\u0131y\u0131
+    se\xE7mek ister misiniz?\" Peki burada se\xE7iminizi de\u011Fi\u015Ftirmek sizin
+    lehinize mi? \n\n\u0130\u015Fte bizde bu oyunda bunun cevab\u0131n\u0131 bulaca\u011F\u0131z."

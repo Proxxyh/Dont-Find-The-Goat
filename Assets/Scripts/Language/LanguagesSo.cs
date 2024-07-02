@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "LN",menuName ="ScriptableObjects/NewLanguage")]
+[CreateAssetMenu(fileName = "LN", menuName = "ScriptableObjects/NewLanguage")]
 public class LanguagesSo : ScriptableObject
 {
     public string startButton;
@@ -17,4 +17,12 @@ public class LanguagesSo : ScriptableObject
     public string ingameHeaderTextTwoDoorPickOne;
     public string ingameHeaderTextWinText;
     public string ingameHeaderTextLoseText;
+    [Space]
+    public string helpWhatIsItHeader;
+    [TextArea(1, 10)] public string helpWhatIsItText;
+    public string helpMontyHallProblemHeader;
+    [TextArea(1, 10)] public string helpMontyHallProblemText;
+
+
+
 }

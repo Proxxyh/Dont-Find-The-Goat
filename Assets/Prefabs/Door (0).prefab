@@ -75,10 +75,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorIndex: 0
   isOpen: 0
-  isGoatHere: 0
+  isCarHere: 0
   isPlayersDoor: 0
   doorClosed: {fileID: 4965410493556809991}
   doorOpened: {fileID: 8173875190806437892}
+  doorClosedNormal: {fileID: 21300000, guid: 4efbe9afc411a1d41af2423aecc2b7c5, type: 3}
+  doorClosedSelected: {fileID: 21300000, guid: 3f42652a16532d544abfab247081fb50, type: 3}
 --- !u!1 &4965410493556809991
 GameObject:
   m_ObjectHideFlags: 0
