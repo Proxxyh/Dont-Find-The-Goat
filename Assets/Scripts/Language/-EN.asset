@@ -32,15 +32,25 @@ MonoBehaviour:
     on the American TV game show Let''s Make a Deal, named after the show''s host,
     Monty Hall.
 
-    
 
-    In the game, there are three doors: behind one is a
-    car, and behind the other two are goats. You initially choose door number 1.
-    The host then opens one of the other doors to reveal a goat and shows it to you.
-    He then asks: ''Would you like to switch to door number 2?'' So, is it advantageous
-    to change your choice in this situation?
 
-    
+    In the game, there are three doors: behind one is a car, and
+    behind the other two are goats. You initially choose door number 1. The host
+    then opens one of the other doors to reveal a goat and shows it to you. He then
+    asks: ''Would you like to switch to door number 2?'' So, is it advantageous to
+    change your choice in this situation?
 
-    Here, we will find the
-    answer to this question in our game.'
+
+
+    Here, we will find the answer to
+    this question in our game.'
+  statsTitleText: STATS
+  whenPlayerChangeDoorText: 'When Player Changes the Door:'
+  whenPlayerNotChangeDoorText: 'When Player Does Not Changes the Door:'
+  changeDoorText: 'When Player Changes the Door:'
+  notChangeDoorText: 'When Player Does Not Changes the Door:'
+  winsText: Wins
+  loosesText: Looses
+  totalText: Total
+  rateText: Rate
+  resetDataText: Reset Data

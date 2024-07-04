@@ -22,6 +22,22 @@ public class LanguagesSo : ScriptableObject
     [TextArea(1, 10)] public string helpWhatIsItText;
     public string helpMontyHallProblemHeader;
     [TextArea(1, 10)] public string helpMontyHallProblemText;
+ 
+    [Header("Stat Texts")]
+    public string statsTitleText;
+    [Space]
+    public string whenPlayerChangeDoorText;
+    public string whenPlayerNotChangeDoorText;
+
+    public string changeDoorText;
+    public string notChangeDoorText;
+    [Space]
+    public string winsText;
+    public string loosesText;
+    public string totalText;
+    public string rateText;
+    [Space]
+    public string resetDataText;
 
 
 

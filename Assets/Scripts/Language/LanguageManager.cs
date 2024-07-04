@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using static UnityEditor.PlayerSettings.Switch;
+using System;
 
 public class LanguageManager : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class LanguageManager : MonoBehaviour
             Destroy(this);
         #endregion
     }
+
+    public static Action OnLanguageChanged;
 
 
     [Header("Current")]
@@ -40,12 +43,16 @@ public class LanguageManager : MonoBehaviour
     [SerializeField] public TMP_Text whatIsItDescriptionText;
     [SerializeField] public TMP_Text montyHallProblemText;
     [SerializeField] public TMP_Text montyHallProblemDescriptionText;
+    [Space]
+    [SerializeField] public TMP_Text statsTitleTMP;
 
 
 
     [ContextMenu("Change Language")]
     void ChangeLanguage()
     {
+
+
         #region SetCurrentLanguageIndex
         if (currentLanguageIndex + 1 < allLanguagesSoList.Count)
         {
@@ -78,6 +85,14 @@ public class LanguageManager : MonoBehaviour
         whatIsItDescriptionText.text = currentLanguageSo.helpWhatIsItText;
         montyHallProblemText.text = currentLanguageSo.helpMontyHallProblemHeader;
         montyHallProblemDescriptionText.text = currentLanguageSo.helpMontyHallProblemText;
+
+        statsTitleTMP.text = currentLanguageSo.statsTitleText;
+
         #endregion
+
+
     }
+
+    
+
 }

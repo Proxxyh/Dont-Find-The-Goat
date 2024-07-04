@@ -39,3 +39,13 @@ MonoBehaviour:
     ke\xE7i oldu\u011Funu size g\xF6steriyor. Sonra size soruyor: \"2. kap\u0131y\u0131
     se\xE7mek ister misiniz?\" Peki burada se\xE7iminizi de\u011Fi\u015Ftirmek sizin
     lehinize mi? \n\n\u0130\u015Fte bizde bu oyunda bunun cevab\u0131n\u0131 bulaca\u011F\u0131z."
+  statsTitleText: "\u0130STAT\u0130ST\u0130KLER"
+  whenPlayerChangeDoorText: "Oyuncu Kap\u0131y\u0131 De\u011Fi\u015Ftirdi\u011Finde:"
+  whenPlayerNotChangeDoorText: "Oyuncu Kap\u0131y\u0131 De\u011Fi\u015Ftirmedi\u011Finde:"
+  changeDoorText: "Oyuncu Kap\u0131y\u0131 De\u011Fi\u015Ftirdi\u011Finde:"
+  notChangeDoorText: "Oyuncu Kap\u0131y\u0131 De\u011Fi\u015Ftirmedi\u011Finde:"
+  winsText: Kazanma
+  loosesText: Kaybetme
+  totalText: Toplam
+  rateText: Oran
+  resetDataText: "Verileri S\u0131f\u0131rla"

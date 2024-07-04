@@ -47,7 +47,7 @@ public class SaveManager : MonoBehaviour
     }
 
     [ContextMenu("ResetGame")]
-    public void ResetGame()
+    public void ResetAllPlayerPrefs()
     {
         PlayerPrefs.DeleteAll();
     }
