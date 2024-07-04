@@ -10,7 +10,6 @@ public class HideAndShowText : MonoBehaviour
     [SerializeField] private float duration;
     [SerializeField] private float hideValue;
     [SerializeField] private float showValue;
-    [SerializeField] private bool canShowTexts;
     [SerializeField] private List<TMP_Text> texts = new List<TMP_Text>();
     [SerializeField] private List<Color> colors = new List<Color>();
 
@@ -22,27 +21,13 @@ public class HideAndShowText : MonoBehaviour
         }
     }
 
-
-    private void LateUpdate()
-    {
-
-        if (canShowTexts)
-        {
-            ShowTexts();
-        }
-        else
-        {
-            HideTexts();
-        }
-    }
-
     public void MouseEnterText()
     {
-        canShowTexts = true;
+        ShowTexts();
     }
     public void MouseExitText()
     {
-        canShowTexts = false;
+        HideTexts();
     }
 
 
