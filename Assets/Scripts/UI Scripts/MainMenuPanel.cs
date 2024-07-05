@@ -23,6 +23,7 @@ public class MainMenuPanel : MonoBehaviour
             helpObjects[i].SetActive(true);
         }
 
+        transform.Find("StatsPanel").GetChild(0).gameObject.SetActive(false);
 
         //transform.Find("HelpSection").gameObject.SetActive(true);
 
@@ -53,7 +54,7 @@ public class MainMenuPanel : MonoBehaviour
             mainMenuObjects[i].SetActive(true);
         }
 
-
+        transform.Find("StatsPanel").GetChild(0).gameObject.SetActive(false);
         //transform.Find("MainButtons").gameObject.SetActive(true);
         //transform.Find("HelpSection").gameObject.SetActive(false);
         //transform.Find("DeveloperTextGameObject").gameObject.SetActive(true);

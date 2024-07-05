@@ -29,8 +29,11 @@ public class ResultManager : MonoBehaviour
 
     public void CalculateAllPercent()
     {
-        playerChangeDoorPercent = (float)playerChangeDoorWinTotal / (float)playerChangeDoorAllTotal * 100;
-        playerNotChangeDoorPercent = (float)playerNotChangeDoorWinTotal / (float)playerNotChangeDoorAllTotal * 100;
+        if (playerChangeDoorAllTotal != 0)
+            playerChangeDoorPercent = (float)playerChangeDoorWinTotal / (float)playerChangeDoorAllTotal * 100;
+
+        if (playerNotChangeDoorAllTotal != 0)
+            playerNotChangeDoorPercent = (float)playerNotChangeDoorWinTotal / (float)playerNotChangeDoorAllTotal * 100;
     }
 
     public void ClearResultManagerVariables()

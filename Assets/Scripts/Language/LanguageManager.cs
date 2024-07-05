@@ -88,6 +88,7 @@ public class LanguageManager : MonoBehaviour
 
         statsTitleTMP.text = currentLanguageSo.statsTitleText;
 
+        StatsUIManager.Instance.UpdateStatTexts();
         #endregion
 
 
