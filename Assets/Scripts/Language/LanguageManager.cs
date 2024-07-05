@@ -91,9 +91,45 @@ public class LanguageManager : MonoBehaviour
         StatsUIManager.Instance.UpdateStatTexts();
         #endregion
 
+    }
+
+    public void ChangeLanguage(int languageIndex)
+    {
+
+
+        #region SetCurrentLanguageIndex
+        currentLanguageIndex = languageIndex;
+        #endregion
+
+        #region SetCurrentLanguageEnum
+        currentLanguageEnum = (Languages)currentLanguageIndex;
+        #endregion
+
+        #region SetCurrentLanguageSo
+        currentLanguageSo = allLanguagesSoList[currentLanguageIndex];
+        #endregion
+
+
+        #region SetTexts
+        mainMenuStartText.text = currentLanguageSo.startButton;
+        mainMenuHelpText.text = currentLanguageSo.helpButton;
+        mainMenuExitText.text = currentLanguageSo.exitButton;
+
+        yesText.text = currentLanguageSo.yesButton;
+        noText.text = currentLanguageSo.noButton;
+
+        whatIsItHeaderText.text = currentLanguageSo.helpWhatIsItHeader;
+        whatIsItDescriptionText.text = currentLanguageSo.helpWhatIsItText;
+        montyHallProblemText.text = currentLanguageSo.helpMontyHallProblemHeader;
+        montyHallProblemDescriptionText.text = currentLanguageSo.helpMontyHallProblemText;
+
+        statsTitleTMP.text = currentLanguageSo.statsTitleText;
+
+        StatsUIManager.Instance.UpdateStatTexts();
+        #endregion
 
     }
 
-    
+
 
 }
