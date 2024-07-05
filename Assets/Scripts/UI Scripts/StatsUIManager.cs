@@ -130,7 +130,8 @@ public class StatsUIManager : MonoBehaviour
     }
     public void ResetDataButton()
     {
-
+        transform.Find("BlockPanel").gameObject.SetActive(true);
+        transform.Find("YerOrNoBubble").gameObject.SetActive(true);
     }
     public void ResetDataYesButton()
     {
