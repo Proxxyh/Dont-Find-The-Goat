@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
+using DG.Tweening;
+using UnityEngine.UI;
 
 public class StatsUIManager : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class StatsUIManager : MonoBehaviour
     [SerializeField] public TMP_Text whenPlayerNotChangeDoorTitleTMP;
     [SerializeField] public TMP_Text whenPlayerNotChangeDoorStatsTMP;
     [SerializeField] public TMP_Text resetDataTMP;
+
+    [SerializeField] private List<Color> colorList = new List<Color>();
+
 
 
     private LanguageManager languageManager;
@@ -34,6 +38,15 @@ public class StatsUIManager : MonoBehaviour
         languageManager = LanguageManager.Instance;
         resultManager = ResultManager.Instance;
         so = languageManager.currentLanguageSo;
+
+
+        colorList.Add(this.transform.GetChild(0).GetChild(1).GetComponent<TMP_Text>().color);
+        colorList.Add(this.transform.GetChild(0).GetChild(2).GetComponent<TMP_Text>().color);
+        colorList.Add(this.transform.GetChild(0).GetChild(3).GetComponent<TMP_Text>().color);
+        colorList.Add(this.transform.GetChild(0).GetChild(4).GetComponent<TMP_Text>().color);
+        colorList.Add(this.transform.GetChild(0).GetChild(5).GetComponent<TMP_Text>().color);
+        colorList.Add(this.transform.GetChild(0).GetChild(6).GetComponent<Image>().color);
+        colorList.Add(this.transform.GetChild(0).GetChild(6).GetChild(0).GetComponent<TMP_Text>().color);
     }
 
     [ContextMenu("Update Stat Texts")]
@@ -65,13 +78,53 @@ public class StatsUIManager : MonoBehaviour
         UpdateStatTexts();
         if (this.transform.GetChild(0).gameObject.activeSelf)
         {
+            DOTween.KillAll();
             this.transform.GetChild(0).gameObject.SetActive(false);
         }
         else
         {
+            TMP_Text tmpText;
+            UnityEngine.UI.Image image = this.transform.GetChild(0).GetChild(6).GetComponent<UnityEngine.UI.Image>();
+
+            float delay;
+
+
             this.transform.GetChild(0).gameObject.SetActive(true);
+
+            delay = 0.5f;
+            this.transform.GetChild(0).GetChild(0).GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+            this.transform.GetChild(0).GetChild(0).GetComponent<RectTransform>().DOScaleY(0, delay).From(); //BlackBack Anim
+
+            tmpText = this.transform.GetChild(0).GetChild(1).GetComponent<TMP_Text>();
+            tmpText.color = colorList[0];
+            tmpText.DOColor(new Color(tmpText.color.r, tmpText.color.g, tmpText.color.b, 0), delay + 0.5f).From().SetDelay(0.1f); //StatsTitle Anim
+
+            tmpText = this.transform.GetChild(0).GetChild(2).GetComponent<TMP_Text>();
+            tmpText.color = colorList[1];
+            tmpText.DOColor(new Color(tmpText.color.r, tmpText.color.g, tmpText.color.b, 0), delay + 0.5f).From().SetDelay(0.2f); //WhenPlayerChangeTitle Anim
+
+            tmpText = this.transform.GetChild(0).GetChild(3).GetComponent<TMP_Text>();
+            tmpText.color = colorList[2];
+            tmpText.DOColor(new Color(tmpText.color.r, tmpText.color.g, tmpText.color.b, 0), delay + 0.5f).From().SetDelay(0.2f); //WhenPlayerChangeStats Anim
+
+            tmpText = this.transform.GetChild(0).GetChild(4).GetComponent<TMP_Text>();
+            tmpText.color = colorList[3];
+            tmpText.DOColor(new Color(tmpText.color.r, tmpText.color.g, tmpText.color.b, 0), delay + 0.5f).From().SetDelay(0.4f); //WhenPlayerNotChangeTitle Anim
+
+            tmpText = this.transform.GetChild(0).GetChild(5).GetComponent<TMP_Text>();
+            tmpText.color = colorList[4];
+            tmpText.DOColor(new Color(tmpText.color.r, tmpText.color.g, tmpText.color.b, 0), delay + 0.5f).From().SetDelay(0.4f); //WhenPlayerNotChangeStats Anim
+
+
+            image = this.transform.GetChild(0).GetChild(6).GetComponent<UnityEngine.UI.Image>();
+            image.color = colorList[5];
+            image.DOColor(new Color(image.color.r, image.color.g, image.color.b, 0), delay + 1f).From().SetDelay(delay);
+
+            tmpText = this.transform.GetChild(0).GetChild(6).GetChild(0).GetComponent<TMP_Text>();
+            tmpText.color = colorList[6];
+            tmpText.DOColor(new Color(tmpText.color.r, tmpText.color.g, tmpText.color.b, 0), delay + 1).SetDelay(delay).From(); //WhenPlayerNotChangeStats Anim
         }
-        
+
 
 
     }
