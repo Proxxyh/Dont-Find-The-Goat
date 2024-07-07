@@ -9,6 +9,9 @@ public class StatsUIManager : MonoBehaviour
 {
     public static StatsUIManager Instance;
 
+    [SerializeField] public bool isStatsPanelOpen;
+    [SerializeField] public bool isMouseOnStatsPanel;
+
     [SerializeField] public TMP_Text whenPlayerChangeDoorTitleTMP;
     [SerializeField] public TMP_Text whenPlayerChangeDoorStatsTMP;
     [SerializeField] public TMP_Text whenPlayerNotChangeDoorTitleTMP;
@@ -75,11 +78,13 @@ public class StatsUIManager : MonoBehaviour
     {
         if (this.transform.GetChild(0).gameObject.activeSelf)
         {
+            isStatsPanelOpen = false;
             DOTween.KillAll();
             this.transform.GetChild(0).gameObject.SetActive(false);
         }
         else
         {
+            isStatsPanelOpen = true;
             TMP_Text tmpText;
             UnityEngine.UI.Image image = this.transform.GetChild(0).GetChild(6).GetComponent<UnityEngine.UI.Image>();
 
@@ -126,11 +131,15 @@ public class StatsUIManager : MonoBehaviour
     {
         if (!showOrHide)
         {
+            isStatsPanelOpen = false;
+
             DOTween.KillAll();
             this.transform.GetChild(0).gameObject.SetActive(false);
         }
         else if(showOrHide)
         {
+            isStatsPanelOpen = true;
+
             TMP_Text tmpText;
             UnityEngine.UI.Image image = this.transform.GetChild(0).GetChild(6).GetComponent<UnityEngine.UI.Image>();
 
@@ -174,10 +183,19 @@ public class StatsUIManager : MonoBehaviour
         }
     }
 
-    public void StatsButton()
+    public void StatsButton(GameObject obj)
     {
+
         UpdateStatTexts();
         ToggleMenu();
+
+
+
+        Tween a = obj.GetComponent<RectTransform>().DOScale(1.2f, 0.1f).OnComplete(() =>
+        {
+            Tween b = obj.GetComponent<RectTransform>().DOScale(1f, 0.1f);
+            
+        });
     }
     public void ResetDataButton()
     {
@@ -195,4 +213,16 @@ public class StatsUIManager : MonoBehaviour
     {
 
     }
+
+
+    public void OnMouseEnterBlackBackArea()
+    {
+        isMouseOnStatsPanel = true;
+    }
+
+    public void OnMouseExitBlackBackArea()
+    {
+        isMouseOnStatsPanel = false;
+    }
+
 }

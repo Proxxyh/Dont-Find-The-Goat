@@ -53,9 +53,10 @@ public class InputManager : MonoBehaviour
             #endregion
         }
 
+
         #region SendRayToScreenEveryFrame
         //Vector2 mousePositionTwo = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        
+
         //Physics2D.Raycast(mousePositionTwo, Vector2.zero);
         //Debug.DrawRay(mousePositionTwo, Camera.main.transform.forward * 10, Color.red, 0.5f);
         #endregion
