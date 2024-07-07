@@ -473,6 +473,7 @@ GameObject:
   - component: {fileID: 180018562}
   - component: {fileID: 180018564}
   - component: {fileID: 180018563}
+  - component: {fileID: 180018565}
   m_Layer: 5
   m_Name: BlockPanel
   m_TagString: Untagged
@@ -538,6 +539,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 180018561}
   m_CullTransparentMesh: 1
+--- !u!114 &180018565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180018561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2081800048}
+          m_TargetAssemblyTypeName: StatsUIManager, Assembly-CSharp
+          m_MethodName: OnMouseEnterBlackBackArea
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2081800048}
+          m_TargetAssemblyTypeName: StatsUIManager, Assembly-CSharp
+          m_MethodName: OnMouseExitBlackBackArea
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &187636923
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,7 +891,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 81.6
+  m_fontSize: 88.15
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1409,7 +1455,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6891765, y: 0.108}
   m_AnchorMax: {x: 0.93082356, y: 0.19079082}
-  m_AnchoredPosition: {x: -0.5319824, y: -0.5037842}
+  m_AnchoredPosition: {x: -0.5319824, y: -0.50375366}
   m_SizeDelta: {x: -0.69999695, y: 1.0099983}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &423049597
@@ -1506,6 +1552,7 @@ GameObject:
   - component: {fileID: 424920335}
   - component: {fileID: 424920337}
   - component: {fileID: 424920336}
+  - component: {fileID: 424920338}
   m_Layer: 5
   m_Name: WhenPlayerNotChangeDoorTitle
   m_TagString: Untagged
@@ -1580,7 +1627,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25.2
+  m_fontSize: 26.35
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1630,6 +1677,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 424920334}
   m_CullTransparentMesh: 1
+--- !u!114 &424920338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424920334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2081800048}
+          m_TargetAssemblyTypeName: StatsUIManager, Assembly-CSharp
+          m_MethodName: OnMouseEnterBlackBackArea
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2081800048}
+          m_TargetAssemblyTypeName: StatsUIManager, Assembly-CSharp
+          m_MethodName: OnMouseExitBlackBackArea
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &433648938
 GameObject:
   m_ObjectHideFlags: 0
@@ -1705,7 +1797,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.17828864, y: 0.12456399}
   m_AnchorMax: {x: 0.82947433, y: 0.906564}
-  m_AnchoredPosition: {x: -0.5000076, y: 0.41000366}
+  m_AnchoredPosition: {x: -0.50001526, y: 0.41000366}
   m_SizeDelta: {x: 1, y: 2.83}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &449360727
@@ -1890,7 +1982,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50.95
+  m_fontSize: 55
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2487,6 +2579,7 @@ GameObject:
   - component: {fileID: 502149604}
   - component: {fileID: 502149606}
   - component: {fileID: 502149605}
+  - component: {fileID: 502149607}
   m_Layer: 5
   m_Name: WhenPlayerNotChangeDoorStats
   m_TagString: Untagged
@@ -2567,7 +2660,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 21.75
+  m_fontSize: 22.75
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2617,6 +2710,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 502149603}
   m_CullTransparentMesh: 1
+--- !u!114 &502149607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502149603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2081800048}
+          m_TargetAssemblyTypeName: StatsUIManager, Assembly-CSharp
+          m_MethodName: OnMouseEnterBlackBackArea
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2081800048}
+          m_TargetAssemblyTypeName: StatsUIManager, Assembly-CSharp
+          m_MethodName: OnMouseExitBlackBackArea
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2835,7 +2973,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 31.5
+  m_fontSize: 34
   m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2969,6 +3107,7 @@ GameObject:
   - component: {fileID: 661479201}
   - component: {fileID: 661479200}
   - component: {fileID: 661479199}
+  - component: {fileID: 661479202}
   m_Layer: 5
   m_Name: StatsButton
   m_TagString: Untagged
@@ -3090,6 +3229,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 661479197}
   m_CullTransparentMesh: 1
+--- !u!114 &661479202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661479197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2081800048}
+          m_TargetAssemblyTypeName: StatsUIManager, Assembly-CSharp
+          m_MethodName: OnMouseEnterBlackBackArea
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2081800048}
+          m_TargetAssemblyTypeName: StatsUIManager, Assembly-CSharp
+          m_MethodName: OnMouseExitBlackBackArea
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &684223794
 GameObject:
   m_ObjectHideFlags: 0
@@ -3101,6 +3285,7 @@ GameObject:
   - component: {fileID: 684223795}
   - component: {fileID: 684223797}
   - component: {fileID: 684223796}
+  - component: {fileID: 684223798}
   m_Layer: 5
   m_Name: WhenPlayerChangeDoorStats
   m_TagString: Untagged
@@ -3181,7 +3366,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 21.6
+  m_fontSize: 22.55
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3231,6 +3416,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 684223794}
   m_CullTransparentMesh: 1
+--- !u!114 &684223798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684223794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2081800048}
+          m_TargetAssemblyTypeName: StatsUIManager, Assembly-CSharp
+          m_MethodName: OnMouseEnterBlackBackArea
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2081800048}
+          m_TargetAssemblyTypeName: StatsUIManager, Assembly-CSharp
+          m_MethodName: OnMouseExitBlackBackArea
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &687601417
 GameObject:
   m_ObjectHideFlags: 0
@@ -4663,6 +4893,7 @@ GameObject:
   - component: {fileID: 903793835}
   - component: {fileID: 903793837}
   - component: {fileID: 903793836}
+  - component: {fileID: 903793838}
   m_Layer: 5
   m_Name: YerOrNoBubble
   m_TagString: Untagged
@@ -4731,6 +4962,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 903793834}
   m_CullTransparentMesh: 1
+--- !u!114 &903793838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903793834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2081800048}
+          m_TargetAssemblyTypeName: StatsUIManager, Assembly-CSharp
+          m_MethodName: OnMouseEnterBlackBackArea
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2081800048}
+          m_TargetAssemblyTypeName: StatsUIManager, Assembly-CSharp
+          m_MethodName: OnMouseExitBlackBackArea
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &922313800
 GameObject:
   m_ObjectHideFlags: 0
@@ -5037,7 +5313,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.17828864, y: 0.12456399}
   m_AnchorMax: {x: 0.82947433, y: 0.906564}
-  m_AnchoredPosition: {x: -0.49996948, y: 0.41000366}
+  m_AnchoredPosition: {x: -0.49995422, y: 0.41000366}
   m_SizeDelta: {x: 1, y: 2.83}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1029355529
@@ -5222,7 +5498,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
+  m_fontSize: 54
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5283,6 +5559,7 @@ GameObject:
   - component: {fileID: 1069750239}
   - component: {fileID: 1069750241}
   - component: {fileID: 1069750240}
+  - component: {fileID: 1069750242}
   m_Layer: 5
   m_Name: BlackBack
   m_TagString: Untagged
@@ -5348,6 +5625,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1069750238}
   m_CullTransparentMesh: 1
+--- !u!114 &1069750242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069750238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2081800048}
+          m_TargetAssemblyTypeName: StatsUIManager, Assembly-CSharp
+          m_MethodName: OnMouseEnterBlackBackArea
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2081800048}
+          m_TargetAssemblyTypeName: StatsUIManager, Assembly-CSharp
+          m_MethodName: OnMouseExitBlackBackArea
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1088461567
 GameObject:
   m_ObjectHideFlags: 0
@@ -6436,7 +6758,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 31.65
+  m_fontSize: 34.15
   m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6511,6 +6833,7 @@ GameObject:
   - component: {fileID: 1334370222}
   - component: {fileID: 1334370221}
   - component: {fileID: 1334370220}
+  - component: {fileID: 1334370223}
   m_Layer: 5
   m_Name: ResetDataButton
   m_TagString: Untagged
@@ -6633,6 +6956,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1334370218}
   m_CullTransparentMesh: 1
+--- !u!114 &1334370223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334370218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2081800048}
+          m_TargetAssemblyTypeName: StatsUIManager, Assembly-CSharp
+          m_MethodName: OnMouseEnterBlackBackArea
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2081800048}
+          m_TargetAssemblyTypeName: StatsUIManager, Assembly-CSharp
+          m_MethodName: OnMouseExitBlackBackArea
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1358450905
 GameObject:
   m_ObjectHideFlags: 0
@@ -6644,6 +7012,7 @@ GameObject:
   - component: {fileID: 1358450906}
   - component: {fileID: 1358450908}
   - component: {fileID: 1358450907}
+  - component: {fileID: 1358450909}
   m_Layer: 5
   m_Name: WhenPlayerChangeDoorTitle
   m_TagString: Untagged
@@ -6718,7 +7087,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25.95
+  m_fontSize: 27.15
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6768,6 +7137,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1358450905}
   m_CullTransparentMesh: 1
+--- !u!114 &1358450909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358450905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2081800048}
+          m_TargetAssemblyTypeName: StatsUIManager, Assembly-CSharp
+          m_MethodName: OnMouseEnterBlackBackArea
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2081800048}
+          m_TargetAssemblyTypeName: StatsUIManager, Assembly-CSharp
+          m_MethodName: OnMouseExitBlackBackArea
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1358897969
 GameObject:
   m_ObjectHideFlags: 0
@@ -7011,7 +7425,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 31.85
+  m_fontSize: 34.4
   m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -7439,7 +7853,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 246.5
+  m_fontSize: 266.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -7872,7 +8286,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 31.65
+  m_fontSize: 34.15
   m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -8559,7 +8973,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50.1
+  m_fontSize: 54
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -8694,7 +9108,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 21.9
+  m_fontSize: 22.9
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -8797,6 +9211,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7122b6f09ffe8b46987ee437baa3555, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isStatsPanelOpen: 0
+  isMouseOnStatsPanel: 0
   whenPlayerChangeDoorTitleTMP: {fileID: 1358450907}
   whenPlayerChangeDoorStatsTMP: {fileID: 684223796}
   whenPlayerNotChangeDoorTitleTMP: {fileID: 424920336}
@@ -8814,6 +9230,7 @@ GameObject:
   - component: {fileID: 2118700968}
   - component: {fileID: 2118700970}
   - component: {fileID: 2118700969}
+  - component: {fileID: 2118700971}
   m_Layer: 5
   m_Name: StatsTitle
   m_TagString: Untagged
@@ -8888,7 +9305,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26.05
+  m_fontSize: 27.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -8938,6 +9355,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2118700967}
   m_CullTransparentMesh: 1
+--- !u!114 &2118700971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118700967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2081800048}
+          m_TargetAssemblyTypeName: StatsUIManager, Assembly-CSharp
+          m_MethodName: OnMouseEnterBlackBackArea
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2081800048}
+          m_TargetAssemblyTypeName: StatsUIManager, Assembly-CSharp
+          m_MethodName: OnMouseExitBlackBackArea
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &6980008682622630816
 PrefabInstance:
   m_ObjectHideFlags: 0

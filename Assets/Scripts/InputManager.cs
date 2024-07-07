@@ -16,6 +16,8 @@ public class InputManager : MonoBehaviour
     [SerializeField] public bool canPlayerSelectDoor;
     [SerializeField] public GameObject currentChosenDoor;
 
+    private StatsUIManager statsUIManager;
+
     private void Awake()
     {
         #region InstanceCheck
@@ -24,6 +26,11 @@ public class InputManager : MonoBehaviour
         else
             Destroy(this);
         #endregion
+    }
+
+    private void Start()
+    {
+        statsUIManager = StatsUIManager.Instance;
     }
 
     private void Update()
@@ -53,12 +60,19 @@ public class InputManager : MonoBehaviour
             #endregion
         }
 
-
         #region SendRayToScreenEveryFrame
         //Vector2 mousePositionTwo = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         //Physics2D.Raycast(mousePositionTwo, Vector2.zero);
         //Debug.DrawRay(mousePositionTwo, Camera.main.transform.forward * 10, Color.red, 0.5f);
         #endregion
+
+
+        if(statsUIManager.isStatsPanelOpen && !statsUIManager.isMouseOnStatsPanel && Input.GetMouseButtonDown(0))
+        {
+            statsUIManager.ToggleMenu(false);
+        }
+
+
     }
 }
