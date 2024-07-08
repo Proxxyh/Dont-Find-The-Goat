@@ -17,6 +17,7 @@ public class InputManager : MonoBehaviour
     [SerializeField] public GameObject currentChosenDoor;
 
     private StatsUIManager statsUIManager;
+    private SettingsPanel settingsPanel;
 
     private void Awake()
     {
@@ -31,6 +32,7 @@ public class InputManager : MonoBehaviour
     private void Start()
     {
         statsUIManager = StatsUIManager.Instance;
+        settingsPanel = SettingsPanel.Instance;
     }
 
     private void Update()
@@ -68,9 +70,18 @@ public class InputManager : MonoBehaviour
         #endregion
 
 
-        if(statsUIManager.isStatsPanelOpen && !statsUIManager.isMouseOnStatsPanel && Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
-            statsUIManager.ToggleMenu(false);
+            if (statsUIManager.isStatsPanelOpen && !statsUIManager.isMouseOnStatsPanel)
+            {
+                statsUIManager.ToggleMenu(false);
+            }
+
+            if (settingsPanel.isSettingsPanelOpen && !settingsPanel.isMouseOnSettingsPanel)
+            {
+                settingsPanel.TogglePanel(false);
+            }
+
         }
 
 
