@@ -137,6 +137,7 @@ public class StateManager : MonoBehaviour
                     //Oyuncunun seçtiði kapýda keçi varsa
                     LanguageManager.Instance.ingameHeaderText.text = LanguageManager.Instance.currentLanguageSo.ingameHeaderTextWinText;
                     //print("Kazandý");
+                    AudioManager.instance.PlaySoundWithEnum(SoundType.Win);
                     isPlayerWon = true;
                 }
                 else
@@ -144,6 +145,7 @@ public class StateManager : MonoBehaviour
                     //Oyuncu yanlýþ tercih yaptýysa
                     LanguageManager.Instance.ingameHeaderText.text = LanguageManager.Instance.currentLanguageSo.ingameHeaderTextLoseText;
                     //print("Kaybetti");
+                    AudioManager.instance.PlaySoundWithEnum(SoundType.Loose);
                     isPlayerWon = false;
                 }
 
@@ -252,6 +254,7 @@ public class StateManager : MonoBehaviour
 
 
             case GameStates.ThreeDoorPickOne:
+                AudioManager.instance.PlaySoundWithEnum(SoundType.DoorPick);
                 break;
 
 

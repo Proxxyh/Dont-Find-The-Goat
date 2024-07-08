@@ -36,5 +36,6 @@ public class Door : MonoBehaviour, IInteractable
         this.isPlayersDoor = true;
         this.gameObject.transform.Find("Door").transform.gameObject.GetComponent<SpriteRenderer>().sprite = doorClosedSelected;
         
+
     }
 }

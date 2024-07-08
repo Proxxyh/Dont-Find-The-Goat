@@ -4,7 +4,16 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    public static AudioManager instance;
+
+
     [SerializeField] private List<GameObject> audioObjects = new List<GameObject>();
+
+    [Header("-----------------------------------------------------------------------------------------------------------------------------------------")]
+
+    [Header("Music Settings")]
+    [SerializeField] private AudioSource playSoundWithEnumSource;
+    [SerializeField] private List<AudioClip> soundsWithEnum = new List<AudioClip>();
 
     [Header("-----------------------------------------------------------------------------------------------------------------------------------------")]
 
@@ -15,6 +24,16 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private int choosenMusicIndex;
     [SerializeField] private float choosenMusicLenght;
 
+
+    private void Awake()
+    {
+        #region InstanceCheck
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(this);
+        #endregion
+    }
     private void OnEnable()
     {
         ChangeMusic();
@@ -78,4 +97,31 @@ public class AudioManager : MonoBehaviour
         yield return new WaitForSeconds(choosenMusicLenght);
         ChangeMusic();
     }
+
+
+    public void PlaySoundWithEnum(SoundType soundType)
+    {
+        switch (soundType)
+        {
+            case SoundType.DoorPick: 
+                break;
+            case SoundType.Win:
+                break;
+            case SoundType.Loose:
+                break;
+            default:
+                break;
+        }
+
+        playSoundWithEnumSource.clip = soundsWithEnum[(int)soundType];
+        playSoundWithEnumSource.Play();
+    }
+    
+
+}
+public enum SoundType
+{
+    DoorPick,
+    Win,
+    Loose
 }
