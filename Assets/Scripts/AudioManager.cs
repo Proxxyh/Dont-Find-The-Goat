@@ -5,15 +5,27 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     [SerializeField] private List<GameObject> audioObjects = new List<GameObject>();
-    [SerializeField] private List<GameObject> musicObjects = new List<GameObject>();
 
+    [Header("-----------------------------------------------------------------------------------------------------------------------------------------")]
+
+    [Header("Music Settings")]
+    [SerializeField] private AudioSource musicSource;
+    [SerializeField] private List<AudioClip> musics = new List<AudioClip>();
+    [Space]
+    [SerializeField] private int choosenMusicIndex;
+    [SerializeField] private float choosenMusicLenght;
+
+    private void OnEnable()
+    {
+        ChangeMusic();
+    }
 
     public void OneShotAudio(GameObject audioObject)
     {
         if (audioObject.activeSelf)
         {
             audioObject.GetComponent<AudioSource>().Play();
-        }   
+        }
     }
 
 
@@ -37,20 +49,33 @@ public class AudioManager : MonoBehaviour
     }
     public void ToggleMusics()
     {
-        if (musicObjects[0].activeSelf)
+        if (musicSource.gameObject.activeSelf)
         {
-            foreach (GameObject item in musicObjects)
-            {
-                item.SetActive(false);
-            }
+            musicSource.gameObject.SetActive(false);
         }
         else
         {
-            foreach (GameObject item in musicObjects)
-            {
-                item.SetActive(true);
-            }
+            musicSource.gameObject.SetActive(true);
+            ChangeMusic();
         }
 
+    }
+
+
+    [ContextMenu("Change Music")]
+    private void ChangeMusic()
+    {
+        choosenMusicIndex = Random.Range(0, musics.Count);
+        musicSource.clip = musics[choosenMusicIndex];
+        choosenMusicLenght = musics[choosenMusicIndex].length;
+
+        musicSource.Play();
+        StartCoroutine(MusicCounter());
+    }
+
+    private IEnumerator MusicCounter()
+    {
+        yield return new WaitForSeconds(choosenMusicLenght);
+        ChangeMusic();
     }
 }
