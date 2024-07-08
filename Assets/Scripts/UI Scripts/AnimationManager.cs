@@ -13,4 +13,14 @@ public class AnimationManager : MonoBehaviour
     {
         obj.GetComponent<RectTransform>().DOScale(1f, 0.5f);
     }
+
+
+    public void SquareButtonPopUpAnimation(GameObject obj)
+    {
+        Tween a = obj.GetComponent<RectTransform>().DOScale(1.2f, 0.1f).OnComplete(() =>
+        {
+            Tween b = obj.GetComponent<RectTransform>().DOScale(1f, 0.1f);
+
+        });
+    }
 }

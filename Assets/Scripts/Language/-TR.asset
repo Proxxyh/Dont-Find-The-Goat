@@ -49,3 +49,5 @@ MonoBehaviour:
   totalText: Toplam
   rateText: Oran
   resetDataText: "Verileri S\u0131f\u0131rla"
+  areYouSureToResetDataText: "Verileri s\u0131f\u0131rlamak istedi\u011Fine emin
+    misin?"

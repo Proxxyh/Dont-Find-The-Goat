@@ -28,14 +28,43 @@ public class SettingsPanel : MonoBehaviour
                 item.SetActive(true);
             }
         }
-
-
     }
-
+    private void TogglePanel(bool onOrOff)
+    {
+        if (!onOrOff)    //Menüyü Kapat
+        {
+            foreach (GameObject item in inMenuObjects)
+            {
+                item.SetActive(false);
+            }
+        }
+        else if (onOrOff)   //Menüyü Aç
+        {
+            foreach (GameObject item in inMenuObjects)
+            {
+                item.SetActive(true);
+            }
+        }
+    }
 
     #endregion
 
     #region MenuItems
+
+    public void ChangeLanguageButton()
+    {
+        LanguageManager.Instance.ChangeLanguage();
+    }
+
+    public void ToggleMusic()
+    {
+
+    }
+
+    public void ToggleSounds()
+    {
+
+    }
     #endregion
 
 }

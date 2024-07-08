@@ -18,6 +18,10 @@ public class StatsUIManager : MonoBehaviour
     [SerializeField] public TMP_Text whenPlayerNotChangeDoorStatsTMP;
     [SerializeField] public TMP_Text resetDataTMP;
 
+    [SerializeField] public TMP_Text areYouSureToResetDataTMP;
+    [SerializeField] public TMP_Text yesButtonTMP;
+    [SerializeField] public TMP_Text noButtonTMP;
+
     [SerializeField] private List<Color> colorList = new List<Color>();
 
 
@@ -73,6 +77,9 @@ public class StatsUIManager : MonoBehaviour
             so.rateText + ": %" + resultManager.playerNotChangeDoorPercent.ToString("F2");
 
         resetDataTMP.text = so.resetDataText;
+        areYouSureToResetDataTMP.text = so.areYouSureToResetDataText;
+        yesButtonTMP.text = so.yesButton;
+        noButtonTMP.text = so.noButton;
     }
     public void ToggleMenu()
     {

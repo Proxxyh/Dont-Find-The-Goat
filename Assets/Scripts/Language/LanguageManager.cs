@@ -49,7 +49,7 @@ public class LanguageManager : MonoBehaviour
 
 
     [ContextMenu("Change Language")]
-    void ChangeLanguage()
+    public void ChangeLanguage()
     {
 
 

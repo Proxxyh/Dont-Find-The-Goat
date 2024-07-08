@@ -38,6 +38,8 @@ public class LanguagesSo : ScriptableObject
     public string rateText;
     [Space]
     public string resetDataText;
+    [Space]
+    public string areYouSureToResetDataText;
 
 
 
