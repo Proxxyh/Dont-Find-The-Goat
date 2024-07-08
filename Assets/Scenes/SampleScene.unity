@@ -270,6 +270,7 @@ GameObject:
   - component: {fileID: 1499357}
   - component: {fileID: 1499356}
   - component: {fileID: 1499355}
+  - component: {fileID: 1499358}
   m_Layer: 5
   m_Name: SettingsButton
   m_TagString: Untagged
@@ -415,6 +416,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1499353}
   m_CullTransparentMesh: 1
+--- !u!114 &1499358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 796299856}
+          m_TargetAssemblyTypeName: SettingsPanel, Assembly-CSharp
+          m_MethodName: IsMouseOnSettingsPanel
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 796299856}
+          m_TargetAssemblyTypeName: SettingsPanel, Assembly-CSharp
+          m_MethodName: IsMouseOnSettingsPanel
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &47091227
 GameObject:
   m_ObjectHideFlags: 0
@@ -2684,6 +2730,7 @@ GameObject:
   - component: {fileID: 501376683}
   - component: {fileID: 501376686}
   - component: {fileID: 501376685}
+  - component: {fileID: 501376688}
   - component: {fileID: 501376684}
   - component: {fileID: 501376687}
   m_Layer: 5
@@ -2877,6 +2924,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &501376688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501376682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97047af85ba254e4cb6b7876b30a1657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &502149603
 GameObject:
   m_ObjectHideFlags: 0
@@ -4303,6 +4362,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c40870722a41bb419e2e6188000f481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMouseOnSettingsPanel: 0
+  isSettingsPanelOpen: 0
   inMenuObjects:
   - {fileID: 1311965375}
   - {fileID: 863848042}
@@ -4477,6 +4538,7 @@ GameObject:
   - component: {fileID: 813345823}
   - component: {fileID: 813345826}
   - component: {fileID: 813345825}
+  - component: {fileID: 813345828}
   - component: {fileID: 813345824}
   - component: {fileID: 813345827}
   m_Layer: 5
@@ -4670,6 +4732,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &813345828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813345822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97047af85ba254e4cb6b7876b30a1657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &823669171
 GameObject:
   m_ObjectHideFlags: 0
@@ -4983,6 +5057,7 @@ GameObject:
   - component: {fileID: 863848046}
   - component: {fileID: 863848045}
   - component: {fileID: 863848044}
+  - component: {fileID: 863848047}
   m_Layer: 5
   m_Name: LanguageButton_1
   m_TagString: Untagged
@@ -5116,6 +5191,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 863848042}
   m_CullTransparentMesh: 1
+--- !u!114 &863848047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863848042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 796299856}
+          m_TargetAssemblyTypeName: SettingsPanel, Assembly-CSharp
+          m_MethodName: IsMouseOnSettingsPanel
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 796299856}
+          m_TargetAssemblyTypeName: SettingsPanel, Assembly-CSharp
+          m_MethodName: IsMouseOnSettingsPanel
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &879035115
 GameObject:
   m_ObjectHideFlags: 0
@@ -5127,6 +5247,7 @@ GameObject:
   - component: {fileID: 879035116}
   - component: {fileID: 879035119}
   - component: {fileID: 879035118}
+  - component: {fileID: 879035121}
   - component: {fileID: 879035117}
   - component: {fileID: 879035120}
   m_Layer: 5
@@ -5320,6 +5441,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &879035121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879035115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97047af85ba254e4cb6b7876b30a1657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &893127680
 GameObject:
   m_ObjectHideFlags: 0
@@ -6643,6 +6776,11 @@ MonoBehaviour:
   audioObjects:
   - {fileID: 1296765114}
   - {fileID: 1772694776}
+  playSoundWithEnumSource: {fileID: 1381073550}
+  soundsWithEnum:
+  - {fileID: 8300000, guid: b8bd20b451682d14ab3dc4fcd37e8a6c, type: 3}
+  - {fileID: 8300000, guid: 9ac6688f9f0db2f419418ffd1d423136, type: 3}
+  - {fileID: 8300000, guid: dca1cfc23de5f85479612be4beb2d854, type: 3}
   musicSource: {fileID: 377151765}
   musics:
   - {fileID: 8300000, guid: f874ea2488f856c45bf0944a611a98cf, type: 3}
@@ -6664,6 +6802,7 @@ Transform:
   - {fileID: 1296765116}
   - {fileID: 1772694778}
   - {fileID: 377151764}
+  - {fileID: 1381073549}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7615,6 +7754,7 @@ GameObject:
   - component: {fileID: 1311965376}
   - component: {fileID: 1311965378}
   - component: {fileID: 1311965377}
+  - component: {fileID: 1311965379}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -7680,6 +7820,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1311965375}
   m_CullTransparentMesh: 1
+--- !u!114 &1311965379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311965375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 796299856}
+          m_TargetAssemblyTypeName: SettingsPanel, Assembly-CSharp
+          m_MethodName: IsMouseOnSettingsPanel
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 796299856}
+          m_TargetAssemblyTypeName: SettingsPanel, Assembly-CSharp
+          m_MethodName: IsMouseOnSettingsPanel
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1334370218
 GameObject:
   m_ObjectHideFlags: 0
@@ -8199,6 +8384,134 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1358897969}
   m_CullTransparentMesh: 1
+--- !u!1 &1381073548
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1381073549}
+  - component: {fileID: 1381073550}
+  m_Layer: 0
+  m_Name: PlaySoundWithEnum
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1381073549
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381073548}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1117988887}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1381073550
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381073548}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b8bd20b451682d14ab3dc4fcd37e8a6c, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1.3
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1449896781
 GameObject:
   m_ObjectHideFlags: 0
@@ -8910,6 +9223,7 @@ GameObject:
   - component: {fileID: 1651807763}
   - component: {fileID: 1651807762}
   - component: {fileID: 1651807761}
+  - component: {fileID: 1651807764}
   m_Layer: 5
   m_Name: MusicsButton_3
   m_TagString: Untagged
@@ -9043,6 +9357,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1651807759}
   m_CullTransparentMesh: 1
+--- !u!114 &1651807764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1651807759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 796299856}
+          m_TargetAssemblyTypeName: SettingsPanel, Assembly-CSharp
+          m_MethodName: IsMouseOnSettingsPanel
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 796299856}
+          m_TargetAssemblyTypeName: SettingsPanel, Assembly-CSharp
+          m_MethodName: IsMouseOnSettingsPanel
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1652023406
 GameObject:
   m_ObjectHideFlags: 0
@@ -10547,6 +10906,7 @@ GameObject:
   - component: {fileID: 2138679595}
   - component: {fileID: 2138679594}
   - component: {fileID: 2138679593}
+  - component: {fileID: 2138679596}
   m_Layer: 5
   m_Name: AudiosButton_2
   m_TagString: Untagged
@@ -10680,6 +11040,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2138679591}
   m_CullTransparentMesh: 1
+--- !u!114 &2138679596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2138679591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 796299856}
+          m_TargetAssemblyTypeName: SettingsPanel, Assembly-CSharp
+          m_MethodName: IsMouseOnSettingsPanel
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 796299856}
+          m_TargetAssemblyTypeName: SettingsPanel, Assembly-CSharp
+          m_MethodName: IsMouseOnSettingsPanel
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &6980008682622630816
 PrefabInstance:
   m_ObjectHideFlags: 0
