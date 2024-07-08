@@ -34,6 +34,8 @@ public class SaveManager : MonoBehaviour
 
         PlayerPrefs.SetInt("playerNotChangeDoorAllTotal", ResultManager.Instance.playerNotChangeDoorAllTotal);
         PlayerPrefs.SetInt("playerNotChangeDoorWinTotal", ResultManager.Instance.playerNotChangeDoorWinTotal);
+
+        PlayerPrefs.SetInt("languageIndex", LanguageManager.Instance.currentLanguageIndex);
     }
 
     public void LoadGame()
@@ -44,6 +46,11 @@ public class SaveManager : MonoBehaviour
         ResultManager.Instance.playerNotChangeDoorWinTotal = PlayerPrefs.GetInt("playerNotChangeDoorWinTotal");
 
         ResultManager.Instance.CalculateAllPercent();
+
+
+
+        LanguageManager.Instance.ChangeLanguage(PlayerPrefs.GetInt("languageIndex"));
+        
     }
 
     [ContextMenu("ResetGame")]

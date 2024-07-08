@@ -23,7 +23,7 @@ public class LanguageManager : MonoBehaviour
 
     [Header("Current")]
     [SerializeField] private Languages currentLanguageEnum;
-    [SerializeField] private int currentLanguageIndex;
+    [SerializeField] public int currentLanguageIndex;
     [SerializeField] public LanguagesSo currentLanguageSo;
 
     [Header("Languages SO")]
@@ -125,7 +125,7 @@ public class LanguageManager : MonoBehaviour
 
         statsTitleTMP.text = currentLanguageSo.statsTitleText;
 
-        StatsUIManager.Instance.UpdateStatTexts();
+        //StatsUIManager.Instance.UpdateStatTexts();
         #endregion
 
     }
