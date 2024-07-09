@@ -22,6 +22,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private List<AudioClip> musics = new List<AudioClip>();
     [Space]
     [SerializeField] private int choosenMusicIndex;
+    [SerializeField] private float currentTime;
     [SerializeField] private float choosenMusicLenght;
 
 
@@ -37,6 +38,15 @@ public class AudioManager : MonoBehaviour
     private void OnEnable()
     {
         ChangeMusic();
+    }
+
+    private void Update()
+    {
+        currentTime += Time.deltaTime;
+        if (currentTime >= choosenMusicLenght)
+        {
+            ChangeMusic();
+        }
     }
 
     public void OneShotAudio(GameObject audioObject)
@@ -84,12 +94,17 @@ public class AudioManager : MonoBehaviour
     [ContextMenu("Change Music")]
     private void ChangeMusic()
     {
+        currentTime = 0;
         choosenMusicIndex = Random.Range(0, musics.Count);
         musicSource.clip = musics[choosenMusicIndex];
         choosenMusicLenght = musics[choosenMusicIndex].length;
 
-        musicSource.Play();
-        StartCoroutine(MusicCounter());
+        if (musicSource.gameObject.activeSelf)
+        {
+            musicSource.Play();
+        }
+        
+        //StartCoroutine(MusicCounter());
     }
 
     private IEnumerator MusicCounter()
@@ -103,7 +118,7 @@ public class AudioManager : MonoBehaviour
     {
         switch (soundType)
         {
-            case SoundType.DoorPick: 
+            case SoundType.DoorPick:
                 break;
             case SoundType.Win:
                 break;
@@ -116,7 +131,7 @@ public class AudioManager : MonoBehaviour
         playSoundWithEnumSource.clip = soundsWithEnum[(int)soundType];
         playSoundWithEnumSource.Play();
     }
-    
+
 
 }
 public enum SoundType
