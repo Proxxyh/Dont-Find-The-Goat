@@ -129,7 +129,11 @@ public class AudioManager : MonoBehaviour
         }
 
         playSoundWithEnumSource.clip = soundsWithEnum[(int)soundType];
-        playSoundWithEnumSource.Play();
+        if (playSoundWithEnumSource.gameObject.activeSelf)
+        {
+            playSoundWithEnumSource.Play();
+        }
+        
     }
 
 
