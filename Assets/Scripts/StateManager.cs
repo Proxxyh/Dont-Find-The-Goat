@@ -102,7 +102,7 @@ public class StateManager : MonoBehaviour
 
                 isCurrentStateUsingUpdate = true;  //En son çalýþacak
                 break;
-
+                
 
             case GameStates.AskForTheChange:
                 
@@ -270,6 +270,8 @@ public class StateManager : MonoBehaviour
             case GameStates.SeeResult:
                 reStartButton.SetActive(false);
                 ResetAllForStartGameAgain();
+
+                AudioManager.instance.gameObject.transform.Find("PlaySoundWithEnum").gameObject.GetComponent<AudioSource>().Stop();
                 break;
         }
     }
