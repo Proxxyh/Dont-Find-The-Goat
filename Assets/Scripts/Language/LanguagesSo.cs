@@ -40,6 +40,8 @@ public class LanguagesSo : ScriptableObject
     public string resetDataText;
     [Space]
     public string areYouSureToResetDataText;
+    [Space]
+    public string languageInitialText;
 
 
 

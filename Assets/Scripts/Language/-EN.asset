@@ -55,3 +55,4 @@ MonoBehaviour:
   rateText: Rate
   resetDataText: Reset Data
   areYouSureToResetDataText: Are you sure you want to reset the data?
+  languageInitialText: EN

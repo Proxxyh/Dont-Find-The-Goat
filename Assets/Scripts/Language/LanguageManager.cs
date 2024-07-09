@@ -45,6 +45,8 @@ public class LanguageManager : MonoBehaviour
     [SerializeField] public TMP_Text montyHallProblemDescriptionText;
     [Space]
     [SerializeField] public TMP_Text statsTitleTMP;
+    [Space]
+    [SerializeField] public TMP_Text languageInitialTMP;
 
 
 
@@ -88,6 +90,8 @@ public class LanguageManager : MonoBehaviour
 
         statsTitleTMP.text = currentLanguageSo.statsTitleText;
 
+        languageInitialTMP.text = currentLanguageSo.languageInitialText;
+
         StatsUIManager.Instance.UpdateStatTexts();
         #endregion
 
@@ -124,6 +128,9 @@ public class LanguageManager : MonoBehaviour
         montyHallProblemDescriptionText.text = currentLanguageSo.helpMontyHallProblemText;
 
         statsTitleTMP.text = currentLanguageSo.statsTitleText;
+
+
+        languageInitialTMP.text = currentLanguageSo.languageInitialText;
 
         //StatsUIManager.Instance.UpdateStatTexts();
         #endregion
