@@ -824,7 +824,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.072866224, y: 0.312}
   m_AnchorMax: {x: 0.47173247, y: 0.688}
-  m_AnchoredPosition: {x: 0.50102234, y: 0}
+  m_AnchoredPosition: {x: 0.5010071, y: 0}
   m_SizeDelta: {x: 1, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &187636925
@@ -1343,7 +1343,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.25367984, y: 0.5534184}
   m_AnchorMax: {x: 0.74735963, y: 0.83300006}
-  m_AnchoredPosition: {x: 4.899994, y: -5.600006}
+  m_AnchoredPosition: {x: 4.9000244, y: -5.600006}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &285689122
@@ -1520,7 +1520,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.07, y: 0.70989394}
   m_AnchorMax: {x: 0.92286855, y: 0.7845788}
-  m_AnchoredPosition: {x: -144.00006, y: -107.4}
+  m_AnchoredPosition: {x: -144.00012, y: -107.399994}
   m_SizeDelta: {x: 331.19995, y: 416}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &308031888
@@ -1543,8 +1543,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Bu oyun \"Monty Hall Problemi\" nin pratikte ne kadar do\u011Fru oldu\u011Funu
-    test etmek amac\u0131yla yap\u0131lm\u0131\u015Ft\u0131r."
+  m_text: This game was created to test the practical accuracy of the Monty Hall
+    Problem.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3ad83670894fcda4e8684cb5f7c31e16, type: 2}
   m_sharedMaterial: {fileID: -7638977330718042263, guid: 3ad83670894fcda4e8684cb5f7c31e16, type: 2}
@@ -2227,7 +2227,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: EVET
+  m_text: YES
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3ad83670894fcda4e8684cb5f7c31e16, type: 2}
   m_sharedMaterial: {fileID: -7638977330718042263, guid: 3ad83670894fcda4e8684cb5f7c31e16, type: 2}
@@ -2463,7 +2463,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "BA\u015ELAT"
+  m_text: START
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3ad83670894fcda4e8684cb5f7c31e16, type: 2}
   m_sharedMaterial: {fileID: -7638977330718042263, guid: 3ad83670894fcda4e8684cb5f7c31e16, type: 2}
@@ -2788,7 +2788,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.07, y: 0.164}
   m_AnchorMax: {x: 0.92286855, y: 0.5854341}
-  m_AnchoredPosition: {x: -144.00006, y: -13.999084}
+  m_AnchoredPosition: {x: -144.00012, y: -13.999084}
   m_SizeDelta: {x: 331.19995, y: 229}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &485253343
@@ -2811,15 +2811,22 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Monty Hall problemi, Amerikan TV yar\u0131\u015Fma program\u0131 Let's
-    Make a Deal'a dayanan bir olas\u0131l\u0131k bulmacas\u0131d\u0131r. Problem
-    ad\u0131n\u0131, yar\u0131\u015Fman\u0131n sunucusu Monty Hall'dan al\u0131r.\n\nBir
-    yar\u0131\u015Fma program\u0131nda \xFC\xE7 kap\u0131 var: birinde araba, di\u011Fer
-    ikisinde ke\xE7i var. \u0130lk olarak 1. kap\u0131y\u0131 se\xE7iyorsunuz. Sunucu
-    arkas\u0131nda ke\xE7i olan bir kap\u0131y\u0131 a\xE7\u0131yor ve arkas\u0131nda
-    ke\xE7i oldu\u011Funu size g\xF6steriyor. Sonra size soruyor: \"2. kap\u0131y\u0131
-    se\xE7mek ister misiniz?\" Peki burada se\xE7iminizi de\u011Fi\u015Ftirmek sizin
-    lehinize mi? \n\n\u0130\u015Fte bizde bu oyunda bunun cevab\u0131n\u0131 bulaca\u011F\u0131z."
+  m_text: 'The Monty Hall problem is a probability puzzle based on the American TV
+    game show Let''s Make a Deal, named after the show''s host, Monty Hall.
+
+
+
+    In
+    the game, there are three doors: behind one is a car, and behind the other two
+    are goats. You initially choose door number 1. The host then opens one of the
+    other doors to reveal a goat and shows it to you. He then asks: ''Would you like
+    to switch to door number 2?'' So, is it advantageous to change your choice in
+    this situation?
+
+
+
+    Here, we will find the answer to this question in our
+    game.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3ad83670894fcda4e8684cb5f7c31e16, type: 2}
   m_sharedMaterial: {fileID: -7638977330718042263, guid: 3ad83670894fcda4e8684cb5f7c31e16, type: 2}
@@ -4109,7 +4116,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.25367984, y: 0.8077908}
   m_AnchorMax: {x: 0.74735963, y: 0.90037245}
-  m_AnchoredPosition: {x: 4.899994, y: -5.600006}
+  m_AnchoredPosition: {x: 4.9000244, y: -5.600006}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &719634032
@@ -4731,7 +4738,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.37779495, y: 0.21000001}
   m_AnchorMax: {x: 0.6222051, y: 0.2894584}
-  m_AnchoredPosition: {x: 0.000030517578, y: -0.36764526}
+  m_AnchoredPosition: {x: 0.000030517578, y: -0.36761475}
   m_SizeDelta: {x: -1.3399999, y: -0.029999733}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &813345824
@@ -4955,7 +4962,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: HAYIR
+  m_text: NO
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3ad83670894fcda4e8684cb5f7c31e16, type: 2}
   m_sharedMaterial: {fileID: -7638977330718042263, guid: 3ad83670894fcda4e8684cb5f7c31e16, type: 2}
@@ -5098,7 +5105,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.07, y: 0.8138682}
   m_AnchorMax: {x: 0.92286855, y: 0.8587338}
-  m_AnchoredPosition: {x: -144.00006, y: -110.5}
+  m_AnchoredPosition: {x: -144.00012, y: -110.5}
   m_SizeDelta: {x: 331.19995, y: 430}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &852788164
@@ -5121,7 +5128,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Nedir?
+  m_text: What is it?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3ad83670894fcda4e8684cb5f7c31e16, type: 2}
   m_sharedMaterial: {fileID: -7638977330718042263, guid: 3ad83670894fcda4e8684cb5f7c31e16, type: 2}
@@ -5217,7 +5224,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &863848043
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5642,7 +5649,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.25367984, y: 0.5534184}
   m_AnchorMax: {x: 0.74735963, y: 0.83300006}
-  m_AnchoredPosition: {x: 4.899994, y: -5.600006}
+  m_AnchoredPosition: {x: 4.9000244, y: -5.600006}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &893127682
@@ -6197,7 +6204,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.17828864, y: 0.12456399}
   m_AnchorMax: {x: 0.82947433, y: 0.906564}
-  m_AnchoredPosition: {x: -0.49993515, y: 0.41000366}
+  m_AnchoredPosition: {x: -0.49993896, y: 0.41000366}
   m_SizeDelta: {x: 1, y: 2.83}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1029355529
@@ -6355,7 +6362,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\xC7IKI\u015E"
+  m_text: EXIT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3ad83670894fcda4e8684cb5f7c31e16, type: 2}
   m_sharedMaterial: {fileID: -7638977330718042263, guid: 3ad83670894fcda4e8684cb5f7c31e16, type: 2}
@@ -6612,7 +6619,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TR
+  m_text: EN
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ca9024557e6d56b4f81c2472b08d3a38, type: 2}
   m_sharedMaterial: {fileID: -7638977330718042263, guid: ca9024557e6d56b4f81c2472b08d3a38, type: 2}
@@ -6800,7 +6807,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.07, y: 0.6151447}
   m_AnchorMax: {x: 0.92286855, y: 0.65971065}
-  m_AnchoredPosition: {x: -144.00006, y: -110.600006}
+  m_AnchoredPosition: {x: -144.00012, y: -110.600006}
   m_SizeDelta: {x: 331.19995, y: 430}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1089457506
@@ -6823,7 +6830,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Monty Hall Problemi Nedir?
+  m_text: What is the Monty Hall Problem?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3ad83670894fcda4e8684cb5f7c31e16, type: 2}
   m_sharedMaterial: {fileID: -7638977330718042263, guid: 3ad83670894fcda4e8684cb5f7c31e16, type: 2}
@@ -7077,6 +7084,7 @@ MonoBehaviour:
   audioObjects:
   - {fileID: 1296765114}
   - {fileID: 1772694776}
+  - {fileID: 1381073548}
   playSoundWithEnumSource: {fileID: 1381073550}
   soundsWithEnum:
   - {fileID: 8300000, guid: b8bd20b451682d14ab3dc4fcd37e8a6c, type: 3}
@@ -8063,7 +8071,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1311965376
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9532,7 +9540,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1651807760
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10170,9 +10178,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7705ee55c7e8c3448a855a8073669a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLanguageEnum: 0
-  currentLanguageIndex: 0
-  currentLanguageSo: {fileID: 11400000, guid: 8ee52c417658ed843b34ccc2fe42fb0a, type: 2}
+  currentLanguageEnum: 1
+  currentLanguageIndex: 1
+  currentLanguageSo: {fileID: 11400000, guid: 85d28af195658b743ab085bad7f401c7, type: 2}
   allLanguagesSoList:
   - {fileID: 11400000, guid: 8ee52c417658ed843b34ccc2fe42fb0a, type: 2}
   - {fileID: 11400000, guid: 85d28af195658b743ab085bad7f401c7, type: 2}
@@ -10238,7 +10246,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.25367984, y: 0.8077908}
   m_AnchorMax: {x: 0.74735963, y: 0.90037245}
-  m_AnchoredPosition: {x: 4.899994, y: -5.600006}
+  m_AnchoredPosition: {x: 4.9000244, y: -5.600006}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1871795233
@@ -10752,7 +10760,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: YARDIM
+  m_text: HELP
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3ad83670894fcda4e8684cb5f7c31e16, type: 2}
   m_sharedMaterial: {fileID: -7638977330718042263, guid: 3ad83670894fcda4e8684cb5f7c31e16, type: 2}
@@ -11087,7 +11095,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0130STAT\u0130ST\u0130KLER"
+  m_text: STATS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 05d4247f7329bac4db536066af3a3e8d, type: 2}
   m_sharedMaterial: {fileID: -7638977330718042263, guid: 05d4247f7329bac4db536066af3a3e8d, type: 2}
@@ -11228,7 +11236,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2138679592
 RectTransform:
   m_ObjectHideFlags: 0
